@@ -4,12 +4,14 @@ import java.util.ArrayList;
 public class EratosthenesPrimeSieve implements PrimeSieve {
 
     private int[] allPrimes;
+    private int upperLimit;
 
     public EratosthenesPrimeSieve(int upperLimit) {
+        this.upperLimit = upperLimit;
         boolean[] isPrim = new boolean[upperLimit];
 
         for (int i = 0; i < upperLimit; i++) {
-            if(i % 2 == 1) {
+            if(i % 2 != 0) {
                 isPrim[i] = true;
             }
         }
@@ -54,8 +56,13 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public void printPrimes() {
+        System.out.println("All Prime Numbers until " + upperLimit + ":");
         for(int i = 0; i < allPrimes.length; i++) {
             System.out.print(allPrimes[i]);
+            if(allPrimes.length - 1 != i) {
+                System.out.print(", ");
+            }
         }
+        System.out.print("\nAmount of the Prime Numbers: " + allPrimes.length);
     }
 }
