@@ -3,50 +3,58 @@ import java.util.ArrayList;
 
 public class EratosthenesPrimeSieve implements PrimeSieve {
 
-    private int upperLimit;
+    private int[] allPrimes;
 
     public EratosthenesPrimeSieve(int upperLimit) {
-        this.upperLimit = upperLimit;
+        boolean[] isPrim = new boolean[upperLimit];
+
+        for (int i = 0; i < upperLimit; i++) {
+            isPrim[i] = i % 2 == 1;
+        }
+
+        for (int i = 3; i < Math.sqrt(upperLimit)+2; i += 2) {
+            /*allPrimes[i - 2] = i;
+            for(int y = i; y < upperLimit; y++) {
+                if (y % i != 0 && allPrimes[y - 1] != 0) {
+                    allPrimes[y - i] = y-1;
+                } else if(y % i != 0 && i == 2) {
+                    allPrimes[y - i] = y;
+                } else {
+                    allPrimes[y - i] = -1;
+                }
+            }*/
+            if(isPrim[i] == true) {
+                for(int y = i; y <= upperLimit / i; y++) {
+                    final int number = i * y;
+                    if(number < upperLimit) {
+                        isPrim[number] = false;
+                    }
+                }
+            }
+        }
+
+        int counter = 0;
+        for(boolean primNumber : isPrim) {
+            if(primNumber == true) {
+                counter++;
+            }
+        }
+
+        allPrimes = new int[counter];
+        int indexForPrim = 0;
+        for(int i = 0; i < isPrim.length; i++) {
+            if(isPrim[i] == true) {
+                allPrimes[indexForPrim++] = i;
+            }
+        }
+        allPrimes[0] = 2;
     }
 
     @Override
     public boolean isPrime(int p) {
-
-        ArrayList<Integer> allNumbers = new ArrayList();
-
-        for(int i = 2; i < p; i++) {
-            allNumbers.add(i);
-        }
-
-        if(p < 2) {
-            return false;
-        } else {
-            int multipleOfTwo = 2;
-            int multipleOfThree = 3;
-            int multipleOfFive = 5;
-            int multipleOfSeven = 7;
-
-            while(multipleOfTwo != p && multipleOfTwo < p) {
-                multipleOfTwo += 2;
-                allNumbers.remove((multipleOfTwo));
-            }
-            while (multipleOfThree != p && multipleOfThree < p) {
-                multipleOfThree += 3;
-                allNumbers.remove(multipleOfThree);
-            }
-            while (multipleOfFive != p && multipleOfFive < p) {
-                multipleOfFive += 5;
-                allNumbers.remove(multipleOfFive);
-            }
-            while (multipleOfSeven != p && multipleOfSeven < p) {
-                multipleOfSeven += 7;
-                allNumbers.remove(multipleOfSeven);
-            }
-
-            for (int i = 0; i < allNumbers.size(); i++) {
-                if(allNumbers.get(i).equals(p)) {
-                    return true;
-                }
+        for(int i = 0; i < allPrimes.length; i++) {
+            if(allPrimes[i] == p) {
+                return true;
             }
         }
         return false;
@@ -54,16 +62,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     @Override
     public void printPrimes() {
-        ArrayList<Integer> allNumbers = new ArrayList();
-
-        for(int i = 2; i < upperLimit; i++) {
-            allNumbers.add(i);
-        }
-
-        for(int i = 2; i < upperLimit; i++) {
-            if(isPrime(allNumbers.get(i)) == true) {
-                System.out.println(i);
-            }
+        for(int i = 0; i < allPrimes.length; i++) {
+            System.out.print(allPrimes[i] + ", ");
         }
     }
 }
