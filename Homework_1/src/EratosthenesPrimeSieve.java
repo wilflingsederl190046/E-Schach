@@ -9,20 +9,12 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         boolean[] isPrim = new boolean[upperLimit];
 
         for (int i = 0; i < upperLimit; i++) {
-            isPrim[i] = i % 2 == 1;
+            if(i % 2 == 1) {
+                isPrim[i] = true;
+            }
         }
 
         for (int i = 3; i < Math.sqrt(upperLimit)+2; i += 2) {
-            /*allPrimes[i - 2] = i;
-            for(int y = i; y < upperLimit; y++) {
-                if (y % i != 0 && allPrimes[y - 1] != 0) {
-                    allPrimes[y - i] = y-1;
-                } else if(y % i != 0 && i == 2) {
-                    allPrimes[y - i] = y;
-                } else {
-                    allPrimes[y - i] = -1;
-                }
-            }*/
             if(isPrim[i] == true) {
                 for(int y = i; y <= upperLimit / i; y++) {
                     final int number = i * y;
@@ -63,7 +55,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
     @Override
     public void printPrimes() {
         for(int i = 0; i < allPrimes.length; i++) {
-            System.out.print(allPrimes[i] + ", ");
+            System.out.print(allPrimes[i]);
         }
     }
 }
