@@ -70,6 +70,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         if(limit > 3) {
             for(int i = 2; i <= limit; i += 2) {
                 int firstNumber;
+                boolean oneSumFound = false;
                 for(int y = 0; y < allPrimes.length; y++) {
                     firstNumber = allPrimes[y];
                     int secondNumber;
@@ -77,8 +78,13 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
                         secondNumber = allPrimes[x];
                         if((firstNumber + secondNumber) == i) {
                             System.out.println(i + " summe: " + i + " = " + firstNumber + " + " + secondNumber);
+                            oneSumFound = true;
                             break;
                         }
+                    }
+                    if(oneSumFound == true) {
+                        oneSumFound = false;
+                        break;
                     }
                 }
             }
