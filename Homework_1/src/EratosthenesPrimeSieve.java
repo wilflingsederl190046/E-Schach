@@ -8,18 +8,18 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     public EratosthenesPrimeSieve(int upperLimit) {
         this.upperLimit = upperLimit;
-        boolean[] isPrim = new boolean[upperLimit];
+        boolean[] isPrim = new boolean[upperLimit+1];
 
-        for (int i = 0; i < upperLimit; i++) {
+        for (int i = 0; i < isPrim.length; i++) {
             if(i % 2 != 0) {
                 isPrim[i] = true;
             }
         }
 
-        for (int i = 3; i < Math.sqrt(upperLimit)+2; i += 2) {
+        for (int i = 3; i <= Math.sqrt(upperLimit); i += 2) {
             if(isPrim[i] == true) {
                 for(int y = i; y <= upperLimit / i; y++) {
-                    final int number = i * y;
+                    int number = i * y;
                     if(number < upperLimit) {
                         isPrim[number] = false;
                     }
@@ -28,8 +28,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         }
 
         int counter = 0;
-        for(boolean primNumber : isPrim) {
-            if(primNumber == true) {
+        for(int i = 0; i < isPrim.length; i++) {
+            if(isPrim[i] == true) {
                 counter++;
             }
         }
@@ -82,7 +82,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
                             break;
                         }
                     }
-                    if(oneSumFound) {
+                    if(oneSumFound == true) {
                         break;
                     }
                 }
