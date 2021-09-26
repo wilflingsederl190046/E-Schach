@@ -86,6 +86,9 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
                         break;
                     }
                 }
+                if(oneSumFound == false) {
+                    System.out.println(i + " sum: no sum found! Please restart and enter a higher limit at the beginning");
+                }
             }
         } else {
             throw new IllegalArgumentException("The limit must be above three!");
