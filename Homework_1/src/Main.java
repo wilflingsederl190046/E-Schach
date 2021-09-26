@@ -10,7 +10,8 @@ public class Main {
         EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve(userInput);
         eps.printPrimes();
         System.out.println("\nEXAMPLE 2:\n" +
-                "Please enter the limit for the sum of natural numbers with two prime numbers");
+                "Please enter the limit for the sum of natural numbers with two prime numbers\n" +
+                "(Note: The limit you entered at the beginning is the maximum of a summing prime number)");
         int userInputTwo = s.nextInt();
         eps.sumOfPrimeNumbers(userInputTwo);
     }
