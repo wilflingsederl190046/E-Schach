@@ -65,4 +65,25 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         }
         System.out.print("\nAmount of the Prime Numbers: " + allPrimes.length);
     }
+
+    public void sumOfPrimeNumbers(int limit) {
+        if(limit > 3) {
+            for(int i = 2; i <= limit; i += 2) {
+                int firstNumber;
+                for(int y = 0; y < allPrimes.length; y++) {
+                    firstNumber = allPrimes[y];
+                    int secondNumber;
+                    for(int x = 0; x < allPrimes.length; x++) {
+                        secondNumber = allPrimes[x];
+                        if((firstNumber + secondNumber) == i) {
+                            System.out.println(i + " summe: " + i + " = " + firstNumber + " + " + secondNumber);
+                            break;
+                        }
+                    }
+                }
+            }
+        } else {
+            throw new IllegalArgumentException("Das Limit muss über 3 groß sein!");
+        }
+    }
 }
