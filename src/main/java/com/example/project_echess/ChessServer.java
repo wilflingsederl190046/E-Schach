@@ -37,13 +37,13 @@ public class ChessServer {
     }
 
     private void OutIn(Socket socket) throws IOException {
-        BufferedReader rein = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintStream raus = new PrintStream(socket.getOutputStream());
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintStream out = new PrintStream(socket.getOutputStream());
         String s;
 
-        while(rein.ready()) {
-            s = rein.readLine();
-            raus.println(s);
+        while(in.ready()) {
+            s = in.readLine();
+            out.println(s);
         }
     }
 
