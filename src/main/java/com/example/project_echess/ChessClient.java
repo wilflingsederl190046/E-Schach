@@ -8,17 +8,21 @@ public class ChessClient {
     public static void main(String[] args) {
         Socket socket = null;
         try {
-            socket = new Socket("localhost", 3141);
+            socket = new Socket("localhost", 4711);
 
             OutputStream out = socket.getOutputStream();
             PrintStream ps = new PrintStream(out, true);
-            ps.println("Hallo Welt!");
 
-            InputStream rein = socket.getInputStream();
-            BufferedReader buff = new BufferedReader(new InputStreamReader(rein));
+            InputStream in = socket.getInputStream();
+            BufferedReader buff = new BufferedReader(new InputStreamReader(in));
 
             while (buff.ready()) {
-                System.out.println(buff.readLine());
+                String line = buff.readLine();
+                if(line.equals("menue_launch")) {
+                    Main.launch();
+                } else if(line.startsWith("menue_data;")) {
+
+                }
             }
 
         } catch (UnknownHostException e) {

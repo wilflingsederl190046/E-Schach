@@ -8,47 +8,21 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ChessServer {
-    private final ServerSocket server;
+    private static final int PORT = 4711;
 
-    public ChessServer(int port) throws IOException {
-        server = new ServerSocket(port);
-    }
-
-    private void connect() {
-
-        while (true) {
-            Socket socket = null;
-            try {
-                socket = server.accept();
-                OutIn(socket);
+    public static void main(String[] args) {
+        try (ServerSocket s = new ServerSocket(PORT)) {
+            System.out.println("server started");
+            while (true) {
+                try {
+                    new Thread(new ChessWorker(s.accept())).start();
+                    System.out.println("client connected");
+                } catch (IOException e) {
+                    throw new RuntimeException("ERROR: unable to instantiate reader and writer", e);
+                }
             }
-
-            catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (socket != null)
-                    try {
-                        socket.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-            }
+        } catch (Exception e) {
+            throw new RuntimeException("ERROR: unable to instantiate the server socket", e);
         }
-    }
-
-    private void OutIn(Socket socket) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintStream out = new PrintStream(socket.getOutputStream());
-        String s;
-
-        while(in.ready()) {
-            s = in.readLine();
-            out.println(s);
-        }
-    }
-
-    public static void main(String[] args) throws IOException {
-        ChessServer server = new ChessServer(3141);
-        server.connect();
     }
 }
