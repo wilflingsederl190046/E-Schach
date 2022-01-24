@@ -1,7 +1,5 @@
 package com.example.project_echess;
 
-import java.util.Arrays;
-
 public class Chessboard {
     private Chessman[][] content;
 
@@ -16,12 +14,10 @@ public class Chessboard {
         return false;
     }
 
-    //Anzahl Spalten
     public int getNumOfColumns() {
         return content[0].length;
     }
 
-    //Anzahl Zeilen
     public int getNumOfRows() {
         return content.length;
     }
@@ -30,7 +26,6 @@ public class Chessboard {
         return content[row][col];
     }
 
-    //Inhalt der zuvor auf Feld war wird zurückgegeben
     public Chessman setContent(int row, int col, Chessman chessman) {
         Chessman oldContent = content[row][col];
         content[row][col] = chessman;

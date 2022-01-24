@@ -2,21 +2,20 @@ package com.example.project_echess;
 
 public class AbstractChessman implements Chessman {
     private char description;
-    private boolean isBlack;
+    private boolean isColorBlack;
 
-    public AbstractChessman(boolean isBlack,char description) {
+    public AbstractChessman(boolean isColorBlack,char description) {
         this.description = description;
-        this.isBlack = isBlack;
+        this.isColorBlack = isColorBlack;
     }
 
-    public boolean isBlack() {
-        return isBlack;
+    public boolean isColorBlack() {
+        return isColorBlack;
     }
 
     @Override
     public char toChar() {
-        return ' ';
-        //return (char) (description + ((isBlack) ? ('a' - 'A') : 0));
+        return (char) (description + ((isColorBlack) ? ('a' - 'A') : 0));
     }
 
     @Override
@@ -24,7 +23,7 @@ public class AbstractChessman implements Chessman {
         if (!(chessman instanceof AbstractChessman)) {
             return false;
         }
-        return isBlack != ((AbstractChessman) chessman).isBlack;
+        return isColorBlack != ((AbstractChessman) chessman).isColorBlack;
     }
 
     @Override
@@ -42,5 +41,18 @@ public class AbstractChessman implements Chessman {
 
     public int hashCode() {
         return toChar();
+    }
+
+    public static void cleanBlocked(boolean[][] destinations, Chessboard chessboard,Chessman chessman) {
+        for (int i = 0; i < destinations.length; i++) {
+            for (int j = 0; j < destinations[i].length; j++) {
+                if (destinations[i][j]) {
+                    Chessman opponent = chessboard.getContent(i, j);
+                    if (opponent != null && !chessman.canTake(opponent)) {
+                        destinations[i][j] = false;
+                    }
+                }
+            }
+        }
     }
 }
