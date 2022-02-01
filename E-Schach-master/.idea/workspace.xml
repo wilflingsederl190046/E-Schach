@@ -5,245 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65964e35-82e4-4a1b-8bde-668ea1b09d73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11 H ProducerConsumerProblem Stub/.idea/11 H ProducerConsumerProblem Stub.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../11 H ProducerConsumerProblem Stub/11 H ProducerConsumerProblem Stub.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/best-tests/net/htlgrieskirchen/pos3/streams/Streams_ESTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/best-tests/net/htlgrieskirchen/pos3/streams/Streams_ESTest_scaffolding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/evosuite-seeds/net.htlgrieskirchen.pos3.streams.Streams.seed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/project_info.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_err_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_err_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_out_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/logs/net.htlgrieskirchen.pos3.streams.Streams/std_out_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/pools/net.htlgrieskirchen.pos3.streams.Streams.pool" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/reports/net.htlgrieskirchen.pos3.streams.Streams/statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/seeds/net.htlgrieskirchen.pos3.streams.Streams.seed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/tests/net/htlgrieskirchen/pos3/streams/Streams_ESTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.evosuite/tmp_2018_11_05_12_37_08/tests/net/htlgrieskirchen/pos3/streams/Streams_ESTest_scaffolding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/libraries/apiguardian_api_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/6 H Streams.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/built-jar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/net/htlgrieskirchen/pos3/streams/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/net/htlgrieskirchen/pos3/streams/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/net/htlgrieskirchen/pos3/streams/Streams.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/classes/net/htlgrieskirchen/pos3/streams/Weapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/test/classes/.netbeans_automatic_build" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/test/classes/.netbeans_update_resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/build/test/classes/net/htlgrieskirchen/pos3/streams/StreamsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/dist/6_H_Streams.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/out/production/6 H Streams/net/htlgrieskirchen/pos3/streams/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/out/production/6 H Streams/net/htlgrieskirchen/pos3/streams/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/src/net/htlgrieskirchen/pos3/streams/CombatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/src/net/htlgrieskirchen/pos3/streams/DamageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/src/net/htlgrieskirchen/pos3/streams/Streams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/src/net/htlgrieskirchen/pos3/streams/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/test/net/htlgrieskirchen/pos3/streams/StreamsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../6 H Streams/weapons.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Anleitung Git Bash.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ElectronicStockManagement_StudentStub/ElectronicStockManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/BeispielProgramme.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/BiConsumerExample.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/BiFunctionExample.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/BiPredicateExample.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession0.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession0.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession1.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession2.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession3.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession4.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession5.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ExamplesStud/Lession6.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_10_1/Homework_10_1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_11/ElectronicStockManagement_StudentStub/ElectronicStockManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/Homework_5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Homework_5/src/example1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Übersicht Collections.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WilflingsederLukas_Homework_2.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WilflingsederLukas_Homework_4.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/Beispielprogramme.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/CreateStreams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/CreateStreams.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/CreateStreams2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/CreateStreams2.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/Demoprogramm.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/Stream1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/Stream1.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams (1).zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/built-jar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Printable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Weapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/dist/6_D_LambdasStreams.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/CombatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/DamageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/6 D LambdasStreams/weapons.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/Generics.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/src/main/java/Arzt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/src/main/java/Mensch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/src/main/java/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/Generics/src/main/java/Tier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/demo2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/demo2/target/classes/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/src/main/java/demo/rsickinger/CombatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/src/main/java/demo/rsickinger/DamageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/src/main/java/demo/rsickinger/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/src/main/java/demo/rsickinger/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/src/main/java/demo/rsickinger/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/streamDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/Printable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/target/classes/demo/rsickinger/Weapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples (1)/examples/demo/streamDemo/weapons.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/Beispielprogramme.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/CreateStreams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/CreateStreams.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/CreateStreams2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/CreateStreams2.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/Demoprogramm.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/Stream1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/Stream1.java.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams (1).zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/built-jar.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Printable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/build/classes/twelsch/htl/pos3/demo/java8/lambdasstreams/Weapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/dist/6_D_LambdasStreams.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/dist/README.TXT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/manifest.mf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/build-impl.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/genfiles.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/private/private.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/private/private.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/project.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/nbproject/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/CombatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/DamageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/src/twelsch/htl/pos3/demo/java8/lambdasstreams/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/6 D LambdasStreams/weapons.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/Generics.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/src/main/java/Arzt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/src/main/java/Mensch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/src/main/java/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/Generics/src/main/java/Tier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/demo2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/demo2/target/classes/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/src/main/java/demo/rsickinger/CombatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/src/main/java/demo/rsickinger/DamageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/src/main/java/demo/rsickinger/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/src/main/java/demo/rsickinger/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/src/main/java/demo/rsickinger/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/streamDemo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/CombatType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/DamageType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/Printable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/target/classes/demo/rsickinger/Weapon.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/demo/streamDemo/weapons.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/examples.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/src/main/java/BfCla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/target/classes/BfCla.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examples/target/classes/META-INF/examples.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../reciprocal_sum_student_stub/reciprocal_sum_student_stub.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework_1/src/EratosthenesPrimeSieve.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework_1/src/EratosthenesPrimeSieve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WilflingsederLukas_Homework_1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../WilflingsederLukas_Homework_1.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12 H TimeUtilProStub" beforeDir="false" afterPath="$PROJECT_DIR$/../12 H TimeUtilProStub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../E-Schach" beforeDir="false" afterPath="$PROJECT_DIR$/../E-Schach" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../E-Schach-master_old" beforeDir="false" afterPath="$PROJECT_DIR$/../E-Schach-master_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../E-Schach-master_old2" beforeDir="false" afterPath="$PROJECT_DIR$/../E-Schach-master_old2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Homework_3" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework_3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Homework_4" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework_4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project_E-Chess" beforeDir="false" afterPath="$PROJECT_DIR$/../Project_E-Chess" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +32,15 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessServer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/MenuController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessboardController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessClient.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/Client.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard.fxml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessWorker_old.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="248L5StQNGkSnD29NseBcufKYOG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
