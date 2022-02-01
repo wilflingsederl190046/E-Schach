@@ -1,0 +1,4 @@
+Es wurden letzte Woche alle Klassen für die einzelnen Figuren und das Schachbrett programmiert und die erste Version der Oberfläche, 
+also Menü und Schachbrett ist auch schon fertig. Außerdem wurde mit der Server-Client Verbindung begonnen und bis jetzt hat all dies gut funktioniert.
+Die Oberfläche ist noch nicht gut gelungen, aber die zweite Version dieser wird diese Woche fertiggestellt.
+Diese Woche wollen wir die Server-Client Verbindung finalisieren und die komplette Oberfläche bearbeiten.

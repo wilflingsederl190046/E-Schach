@@ -1,0 +1,5 @@
+Letze Woche haben wir an der Server-Client Verbindung weitergearbeitet und andere kleine Verbesserungen vorgenommen. 
+Lukas hat das Menü und das Schachbrett in JavaFx final überarbeitet und außerdem so eingerichtet, dass die Daten vom Menü an den Server gesendet werden.
+Julian hat sich darum gekümmert, dass sich zwei Clients verbinden können, ist aber noch nicht fertig geworden.
+Wir liegen aktuell noch hintem laut Zeitplan, aber diese Woche sollte alles schaffbar sein.
+Diese Woche müssen wir das Projekt finalisieren, also noch die Verbindung von Client zu Client herstellen und den Spielzug programmieren.

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ClientServerComm">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/ClientServerComm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

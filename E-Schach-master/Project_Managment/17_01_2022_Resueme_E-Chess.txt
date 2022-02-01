@@ -1,0 +1,4 @@
+Es wurde sich letzte Woche mit dem GitHub Repository auseinandergesetzt, speziell mit Pull Request und die Organisation.
+Außerdem wurde mit der Programmierung für den Schach-Algorithmus und mit der Oberfläche angefangen und derzeit sind wir auch noch im Zeitplan.
+Diese Woche wollen wir die erste Version der Oberfläche und des Menüs fertig machen und die Branches in GitHub einrichten.
+Weiters wird die Programmierung des Schach-Alogorithmus fortgeführt.

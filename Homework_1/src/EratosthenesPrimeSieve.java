@@ -1,6 +1,3 @@
-import java.awt.*;
-import java.util.ArrayList;
-
 public class EratosthenesPrimeSieve implements PrimeSieve {
 
     private int[] allPrimes;

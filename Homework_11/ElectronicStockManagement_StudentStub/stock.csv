@@ -1,0 +1,104 @@
+Artikelnummer;Produktname;Lagerstand;Preis pro Stück;Bestellt
+ArtNr-5;Audio-Steckverbinder;46;26,6;2018-04-11
+ArtNr-2;Ein- und Mehrphasen-Niederspannungssysteme;3;80,04;2017-12-15
+ArtNr-1;Einphasen-Haushaltsstecksysteme;18;70,08;2017-11-22
+ArtNr-3;Kleinspannungsstecker;26;53,57;2018-02-23
+ArtNr-4;Labor-Steckverbinder;75;61,54;2018-03-07
+ArtNr-6;Videosignal-Steckverbinder;82;85,73;2018-05-09
+ArtNr-7;Hochfrequenz-Steckverbinder;3;19,74;2018-06-19
+ArtNr-8;Daten-Steckverbinder;79;64,21;2018-08-16
+ArtNr-9;Telefon-Steckverbinder;1;68,94;2018-09-11
+ArtNr-10;LWL-Steckverbinder;29;57,83;2018-10-31
+ArtNr-11;Schalter;97;58,43;2019-02-04
+ArtNr-12;Relais, Schütz;53;64,87;2019-02-28
+ArtNr-13;Leitungsschutzschalter, Motorschutzschalter;20;79,57;2019-04-03
+ArtNr-14;Nulldurchgangsschalter;40;8,21;2019-05-01
+ArtNr-15;Nullspannungsschalter;60;18,31;2019-05-02
+ArtNr-16;Reed-Relais;87;72,57;2019-08-05
+ArtNr-17;Schwingquarze;87;89,32;2019-08-22
+ArtNr-18;Keramikresonatoren;83;13,88;2019-08-27
+ArtNr-19;Quarzoszillatoren, (PXO, Quarzofen, TCXO, VXO, VCXO, DTCXO);50;26,47;2019-09-06
+ArtNr-20;AOW-Oszillatoren;4;82,62;2019-09-25
+ArtNr-21;AOW-Filter;68;62,44;2019-10-07
+ArtNr-22;Keramikfilter;41;62,38;2019-11-06
+ArtNr-23;Festkondensatoren;22;68,95;2019-11-19
+ArtNr-24;Keramikkondensator;6;2,44;2019-11-22
+ArtNr-25;Kunststoff-Folienkondensator;0;58,01;2019-12-12
+ArtNr-26;Elektrolytkondensator;8;24,61;2017-12-25
+ArtNr-27;Aluminium-Elektrolytkondensator;63;49,22;2018-04-05
+ArtNr-28;Tantal-Elektrolytkondensator;38;6,54;2018-04-10
+ArtNr-29;Niob-Elektrolytkondensator;77;96,72;2018-06-12
+ArtNr-30;Polymer-Elektrolytkondensator;7;57,73;2018-07-24
+ArtNr-31;Superkondensator (Doppelschichtkondensator);81;6,9;2018-08-27
+ArtNr-32;Lithium-Ionen-Kondensator;26;53,11;2018-09-28
+ArtNr-33;Glimmerkondensator;56;33,26;2018-10-03
+ArtNr-34;Vakuumkondensator;36;48,25;2018-12-17
+ArtNr-35;Leistungskondensatoren;89;39,28;2019-01-02
+ArtNr-36;Induktivität (Bauelement),;39;22,75;2019-01-03
+ArtNr-37;Chipinduktivität, Mikroinduktivität;74;21,85;2019-01-16
+ArtNr-38;Spule (Elektrotechnik),;67;65,56;2019-02-11
+ArtNr-39;Luftspule, Toroidspule, Zündspule, Schwingspule, Tauchspule, Helmholtz-Spule;94;50,47;2019-03-14
+ArtNr-40;Drossel (Elektrotechnik);0;47,09;2019-03-27
+ArtNr-41;Transformatoren;72;28,46;2019-04-02
+ArtNr-42;Streufeldtransformator;35;51,53;2019-04-04
+ArtNr-43;Übertrager;80;48,65;2019-04-17
+ArtNr-44;Balun;11;10,38;2019-04-25
+ArtNr-45;Magnete;6;8,84;2019-04-26
+ArtNr-46;Nullode, elektrodenlose Gasentladungsröhre;13;14,14;2019-06-10
+ArtNr-47;Röhrendiode, Zweipolröhre;0;99,47;2019-06-17
+ArtNr-48;Triodenröhre, die einfachste Verstärkerröhre (Anode, Gitter, Kathode);70;54,68;2019-07-22
+ArtNr-49;Tetrode – Röhre mit zwei Gittern;16;88,23;2019-11-20
+ArtNr-50;Pentode – Röhre mit drei Gittern (Schirm-, Steuer- und Bremsgitter);30;53,22;2019-12-23
+ArtNr-51;Hexode – Röhre mit vier Gittern (Steuer- und Bremsgitter, zwei Schirmgitter);69;32,09;2017-11-23
+ArtNr-52;Braun’sche Röhre: Kathodenstrahlröhre;83;79,15;2018-01-10
+ArtNr-53;Röntgenröhre;5;61,47;2018-01-12
+ArtNr-54;Klystron;42;27,99;2018-01-26
+ArtNr-55;Krytron;99;65,69;2018-03-15
+ArtNr-56;Magnetron;73;85,14;2018-05-03
+ArtNr-57;Sekundärelektronenvervielfacher;46;93,14;2018-05-10
+ArtNr-58;Photomultiplier;24;4,64;2018-06-06
+ArtNr-59;Thyratron;32;27,33;2018-08-01
+ArtNr-60;Excitron;15;37,15;2018-09-06
+ArtNr-61;Ignitron;16;85,92;2018-09-10
+ArtNr-62;Senditron;91;5,82;2018-09-27
+ArtNr-63;Quecksilberdampfgleichrichter;0;72,69;2019-01-15
+ArtNr-64;Verbundröhre;52;98,97;2019-01-25
+ArtNr-65;Abstimmanzeigeröhre;0;66,53;2019-02-26
+ArtNr-66;Nixie-Röhre – Röhre zur Darstellung verschiedener Zeichen (Ziffern);48;52,03;2019-03-01
+ArtNr-67;ROM, PROM (nur lesbare Speicher);33;59,9;2019-03-12
+ArtNr-68;RAM (DRAM, SRAM), EPROM, EEPROM, Flash-EPROM (les- und beschreibbare Speicher);13;80,09;2019-04-24
+ArtNr-69;Mikrocontroller, Mikroprozessor (CPU), Digitaler Signalprozessor (DSP);99;13,88;2019-04-25
+ArtNr-70;Gleitkommaeinheit, Memory Management Unit (MMU);53;11,55;2019-05-07
+ArtNr-71;Grafikprozessor;66;40,46;2019-06-03
+ArtNr-72;Chipsatz;1;65,47;2019-08-08
+ArtNr-73;Generic Array Logic (GAL), Programmable Array Logic (PAL), Field Programmable Gate Array (FPGA);46;58,63;2019-09-04
+ArtNr-74;Logikgatter, Gate Array;45;40,68;2019-10-08
+ArtNr-75;Operationsverstärker;55;82,91;2019-12-05
+ArtNr-76;Spannungsregler, Schaltregler;77;18,6;2017-11-29
+ArtNr-77;Digital-Analog-Umsetzer, Analog-Digital-Umsetzer;39;41,41;2017-11-30
+ArtNr-78;Multiplexer;60;20,87;2017-12-06
+ArtNr-79;Laserdiode;90;28,9;2018-01-11
+ArtNr-80;Leuchtdiode;0;45,26;2018-01-17
+ArtNr-81;Lichtschranke;22;3,34;2018-01-23
+ArtNr-82;Photohalbleiter;61;27,73;2018-02-22
+ArtNr-83;Fotowiderstand;91;79,99;2018-03-13
+ArtNr-84;Halbleiter-Strahlungsdetektoren;19;16,95;2018-03-16
+ArtNr-85;Photoelemente;36;69,4;2018-05-18
+ArtNr-86;Silizium-Photodiode, pin-Diode, Avalanche-Photodiode;82;41,13;2018-05-23
+ArtNr-87;Solarzelle;91;70,43;2018-06-04
+ArtNr-88;Selen-Photoelement;0;63,33;2018-06-13
+ArtNr-89;Fototransistor;44;22,67;2018-09-17
+ArtNr-90;Fotothyristor (Optothyristor);33;10,12;2018-10-08
+ArtNr-91;Optokoppler, Solid-state-Relais;23;51,98;2018-10-18
+ArtNr-92;CCD-Sensoren, CMOS-Sensoren, Bildsensor;77;53,6;2018-11-02
+ArtNr-93;Lichtwellenleiter (LWL);75;55,56;2018-11-05
+ArtNr-94;Dünnschichttransistor (TFT);91;53,75;2018-11-27
+ArtNr-95;OLED;45;72,22;2019-02-12
+ArtNr-96;Grating Light Valve;1337;96,99;2019-03-26
+ArtNr-97;Elektromagnet;30;64,16;2019-06-21
+ArtNr-98;Elektromotor;33;47,35;2019-08-13
+ArtNr-99;Drehstrom-Synchronmaschine;77;85,95;2019-11-08
+ArtNr-100;Drehstrom-Asynchronmaschine;58;98,58;2019-11-18
+ArtNr-101;Gleichstrommaschine;26;91,24;2019-04-05
+ArtNr-102;Lautsprecher;36;48,06;2019-04-23
+ArtNr-103;Flüssigkristallbildschirm (LCD);11;34,11;2019-04-30
