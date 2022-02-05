@@ -1,13 +1,10 @@
 package com.example.project_echess;
 
 import com.example.project_echess.Chessman.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableView;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -330,9 +327,19 @@ public class ChessboardController implements Initializable {
 
     private Chessboard chessboard;
 
+    boolean currentPlayerBlack = false;
+    boolean chessmanIsClicked = false;
+
+    public void setPrimaryStage(Stage stage) {
+        this.stage = stage;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        chessboard = createInitial(stage.getTitle().toUpperCase());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Click Button");
+        alert.setHeaderText("Please click the Submit Button to start the chess game!");
+        alert.showAndWait();
 
         /*Socket socket;
         try {
@@ -357,35 +364,13 @@ public class ChessboardController implements Initializable {
 
     @FXML
     void handleSubmitAction(ActionEvent event) {
-        /*if(!selectChessman.getText().equals("") && !selectField.getText().equals("")) {
-
-        }*/
-
-    }
-
-    private void addGridEvent() {
-        gridPane.getChildren().forEach(item -> {
-            item.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    if(mouseEvent.getClickCount() == 1) {
-                        if(item instanceof ImageView) {
-                            if(item.equals(pawnBlack1)) {
-
-                            }
-                        }
-                    }
-                }
-            });
-        });
-    }
-
-    public String getFireLabel() {
-        return "NEXT MOVE";
-    }
-
-    public String getMessages() {
-        return "";
+        if(turn.getText().equals("")) {
+            String[] nameAndColor = stage.getTitle().split(" ");
+            chessboard = createInitial(nameAndColor[1]);
+            userName.setText(nameAndColor[0]);
+            turn.setText("1");
+            hintField.setText("Player WHITE is next!");
+        }
     }
 
     public char getContent(int row, int col) {
@@ -426,17 +411,17 @@ public class ChessboardController implements Initializable {
 
     protected Chessboard createInitial(String color) {
         Chessboard board = new Chessboard(8, 8);
-        if(color.equals("WHITE")) {
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 8; j++) {
+        if(color.equals("BLACK")) {
+            for (int i = 7; i >= 0; i--) {
+                for (int j = 7; j >= 0; j--) {
                     if (BOARD_AT_START_WHITE[i][j] > -1) {
                         board.setContent(i, j, CHESSMEN[BOARD_AT_START_WHITE[i][j]]);
                     }
                 }
             }
         } else {
-            for (int i = 7; i >= 0; i--) {
-                for (int j = 7; j >= 0; j--) {
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
                     if (BOARD_AT_START_WHITE[i][j] > -1) {
                         board.setContent(i, j, CHESSMEN[BOARD_AT_START_WHITE[i][j]]);
                     }
@@ -448,41 +433,97 @@ public class ChessboardController implements Initializable {
     }
 
     @FXML
+    void handleBlackBishopClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+            Chessman c = chessboard.getContent( (int) event.getX(), (int) event.getY());
+            stage.setTitle(c.toString());
+            chessmanIsClicked = true;
+        }
+    }
+
+    @FXML
+    void handleBlackKingClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+
+        }
+    }
+
+    @FXML
+    void handleBlackKnightClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+
+        }
+    }
+
+    @FXML
+    void handleBlackPawnClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+
+        }
+    }
+
+    @FXML
+    void handleBlackQueenClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+
+        }
+    }
+
+    @FXML
+    void handleBlackRookClickedAction(MouseEvent event) {
+        if(currentPlayerBlack) {
+
+        }
+    }
+
+    @FXML
     void handleFieldClickedAction(MouseEvent event) {
-
+        if(chessmanIsClicked) {
+            selectField.setText("HALLO");
+        }
     }
 
     @FXML
-    void handlePawnClickedAction(MouseEvent event) {
-
+    void handleWhiteBishopClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
+            //Chessman c = chessboard.getContent( (int) event.getX(), (int) event.getY());
+            //stage.setTitle(c.toString());
+            chessmanIsClicked = true;
+        }
     }
 
     @FXML
-    void handleKnightClickedAction(MouseEvent event) {
+    void handleWhiteKingClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
 
+        }
     }
 
     @FXML
-    void handleRookClickedAction(MouseEvent event) {
+    void handleWhiteKnightClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
 
+        }
     }
 
     @FXML
-    void handleBishopClickedAction(MouseEvent event) {
+    void handleWhitePawnClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
 
+        }
     }
 
     @FXML
-    void handleKindClickedAction(MouseEvent event) {
+    void handleWhiteQueenClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
 
+        }
     }
 
     @FXML
-    void handleQueenClickedAction(MouseEvent event) {
+    void handleWhiteRookClickedAction(MouseEvent event) {
+        if(!currentPlayerBlack) {
 
-    }
-
-    public void setPrimaryStage(Stage stage) {
-        this.stage = stage;
+        }
     }
 }

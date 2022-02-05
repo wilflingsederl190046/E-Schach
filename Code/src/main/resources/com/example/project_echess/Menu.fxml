@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_echess.MenuController">
+<AnchorPane prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.project_echess.MenuController">
    <children>
       <ImageView fitHeight="192.0" fitWidth="198.0" layoutX="373.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
          <image>
-            <Image url="@../../../Menue_Picture.jpg" />
+            <Image url="@Pictures/Menue_Picture.jpg" />
          </image>
       </ImageView>
       <Label layoutX="6.0" layoutY="306.0" prefHeight="17.0" prefWidth="122.0" text="By Lukas &amp; Julian" textFill="#66694c" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" />

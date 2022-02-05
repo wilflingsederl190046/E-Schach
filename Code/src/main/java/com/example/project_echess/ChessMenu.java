@@ -13,7 +13,7 @@ public class ChessMenu extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Menu.fxml"));
-        Parent root= fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         MenuController controller_1 = (MenuController) fxmlLoader.getController();
 
         controller_1.setPrimaryStage(stage);

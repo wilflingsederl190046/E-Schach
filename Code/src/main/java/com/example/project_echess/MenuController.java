@@ -45,7 +45,7 @@ public class MenuController {
                 stage.setMinHeight(985);
                 stage.setMinWidth(1275);
                 stage.setResizable(false);
-                stage.setTitle(comboBoxColor.getValue());
+                stage.setTitle(username.getText() + " " + comboBoxColor.getValue().toUpperCase());
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     @Override
                     public void handle(WindowEvent windowEvent) {
@@ -61,11 +61,10 @@ public class MenuController {
                 }
 
                 Parent root = (Parent) loader.load();
+                scene.setRoot(root);
 
                 ChessboardController controller = (ChessboardController) loader.getController();
                 controller.setPrimaryStage(stage);
-
-                scene.setRoot(root);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

@@ -4,7 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65964e35-82e4-4a1b-8bde-668ea1b09d73" name="Changes" comment="" />
+    <list default="true" id="65964e35-82e4-4a1b-8bde-668ea1b09d73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_echess/Chessman/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_echess/Chessman/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_echess/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_echess/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_bdt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_bdt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_blt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_blt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_kdt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_kdt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_klt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_klt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_ndt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_ndt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_nlt60 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_nlt60 (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_pdt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_pdt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_plt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_plt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_qdt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_qdt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_qlt60 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_qlt60 (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_rdt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_rdt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Chess_rlt60.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Chess_rlt60.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Menue_Picture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Pictures/Menue_Picture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_blackSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_blackSide.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_whiteSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_whiteSide.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_bdt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_blt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_kdt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_klt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_ndt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_nlt60 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_pdt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_plt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_qdt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_qlt60 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_rdt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Chess_rlt60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Menue_Picture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessMenu$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessWorker_old.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessWorker_old.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessboardController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_blackSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_blackSide.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_whiteSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_whiteSide.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/AbstractChessman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/AbstractChessman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/King.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Knight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/LinearChessman.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/LinearChessman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/MenuController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/MenuController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ServerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,16 +88,19 @@
         <entry key="$PROJECT_DIR$" value="managment" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/E-Schach" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessServer.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessClient.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_whiteSide.fxml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessWorker_old.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/MenuController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessClient.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessServer.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessboardController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessMenu.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/MenuController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/project_echess/ChessWorker_old.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="248L5StQNGkSnD29NseBcufKYOG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,18 +112,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/example/project_echess" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/project_echess" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15234375" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\POS\E-Schach-master\Code\src\main\java\com\example\project_echess" />
+      <recent name="C:\Users\Admin\Desktop\POS\E-Schach-master\Code\.idea" />
       <recent name="C:\Users\Admin\Desktop\POS\E-Schach-master\src\main\resources\com\example\project_echess" />
       <recent name="C:\Users\lukas\POS_Projekte\E-Schach-master\src\main\resources" />
       <recent name="C:\Users\lukas\POS_Projekte\E-Schach-master\src\main\resources\com\example\project_echess" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\POS\E-Schach-master\Code\src\main\resources\com\example\project_echess\Pictures" />
       <recent name="C:\Users\lukas\POS_Projekte\E-Schach-master\src\main\resources" />
       <recent name="C:\Users\lukas\POS_Projekte\E-Schach-master\src\main\resources\com\example\project_echess" />
     </key>
@@ -68,6 +141,8 @@
   </component>
   <component name="RunManager" selected="Application.ChessMenu">
     <configuration name="ChessMenu" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.project_echess.ChessMenu" />
       <module name="Project_E-Chess" />
       <extension name="coverage">
@@ -81,6 +156,8 @@
       </method>
     </configuration>
     <configuration name="ChessServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.project_echess.ChessServer" />
       <module name="Project_E-Chess" />
       <extension name="coverage">
@@ -140,7 +217,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,6 +224,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.net.BindException" package="java.net" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
