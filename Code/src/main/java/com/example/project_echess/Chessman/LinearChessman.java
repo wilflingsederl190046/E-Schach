@@ -17,9 +17,11 @@ public class LinearChessman extends AbstractChessman {
         try
         {
             for (int i = 1; i <= range; i++) {
-                row = row + direction[0];
-                col = col + direction[1];
-                destinations[row][col] = true;
+                if(row < 7 && col < 7 && direction[0] > 0 && direction[1] > 0) {
+                    row = row + direction[0];
+                    col = col + direction[1];
+                    destinations[row][col] = true;
+                }
                 if (board.getContent(row,col) != null) {
                     break;
                 }

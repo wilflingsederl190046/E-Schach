@@ -62,8 +62,9 @@ public class Chessboard {
         int res = 0;
         for (int i = 0; i < content.length; i++)
             for (int j = 0; j < content[i].length; j++)
-                if (content[i][j] != null)
+                if (content[i][j] != null) {
                     res += content[i][j].hashCode();
+                }
         return res;
     }
 }

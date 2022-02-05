@@ -233,7 +233,7 @@
                   <Image url="@Pictures/Chess_qlt60 (1).png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite6" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnWhite6" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
                <image>
                   <Image url="@Pictures/Chess_plt60.png" />
                </image>
@@ -257,6 +257,9 @@
                <image>
                   <Image url="@Pictures/Chess_plt60.png" />
                </image>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
             </ImageView>
             <ImageView fx:id="rookWhiteR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <image>
