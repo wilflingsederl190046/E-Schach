@@ -387,7 +387,7 @@
          </font></TextField>
       <TextField fx:id="selectChessman" alignment="CENTER" layoutX="116.0" layoutY="636.0" prefHeight="25.0" prefWidth="149.0" />
       <TextField fx:id="selectField" alignment="CENTER" layoutX="116.0" layoutY="678.0" />
-      <Button layoutX="211.0" layoutY="729.0" mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit">
+      <Button layoutX="206.0" layoutY="729.0" mnemonicParsing="false" onAction="#handleStartAction" prefHeight="25.0" prefWidth="58.0" text="Start">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

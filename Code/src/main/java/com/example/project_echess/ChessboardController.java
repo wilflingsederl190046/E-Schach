@@ -5,7 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -332,6 +334,8 @@ public class ChessboardController implements Initializable {
 
     boolean currentPlayerBlack = false;
     boolean chessmanIsClicked = false;
+    int[] chessmanPosition;
+    String currentChessmanID;
 
     Image marker;
 
@@ -340,14 +344,40 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        hintField.setText("Click the Submit Button to start the chess game!");
+        hintField.setText("Click the Start Button to begin with the chess game!");
 
         marker = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/mark.png")));
 
         EventHandler<MouseEvent> eventHandler = new EventHandler<>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                mouseEvent.getSource();
+                Node mark = (Node) mouseEvent.getSource();
+                selectField.setText(mark.getId());
+                int[] newPositionChessman = getRowAndColIndex(mark);
+
+                for(int i = 0; i < 8; i++) {
+                    for(int y = 0; y < 8; y++) {
+                        ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(null);
+                    }
+                }
+
+                for(Node n : gridPane.getChildren()) {
+                    if(n.getId().equals(currentChessmanID)) {
+                        gridPane.getChildren().remove(n);
+                        gridPane.add(n, newPositionChessman[1], newPositionChessman[0]);
+                        break;
+                    }
+                }
+                chessboard.move(chessmanPosition[0], chessmanPosition[1], newPositionChessman[0], newPositionChessman[1]);
+
+                if(currentPlayerBlack) {
+                    currentPlayerBlack = false;
+                    hintField.setText(TURN_PLAYER_WHITE);
+                    turn.setText(Integer.toString(Integer.parseInt(turn.getText()) + 1));
+                } else {
+                    currentPlayerBlack = true;
+                    hintField.setText(TURN_PLAYER_BLACK);
+                }
             }
         };
 
@@ -357,35 +387,16 @@ public class ChessboardController implements Initializable {
                 img.setId("M" + i + j);
                 img.setFitHeight(35);
                 img.setFitWidth(35);
-                GridPane.setMargin(img, new Insets(0,0,0,20));
+                GridPane.setHalignment(img, HPos.CENTER);
+                GridPane.setValignment(img, VPos.CENTER);
                 gridPane.add(img, i, j);
                 img.addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
             }
         }
-
-        /*Socket socket;
-        try {
-            socket = new Socket("localhost", 4711);
-            OutputStream out = socket.getOutputStream();
-            PrintStream ps = new PrintStream(out, true);
-
-            InputStream in = socket.getInputStream();
-            BufferedReader buff = new BufferedReader(new InputStreamReader(in));
-
-            ps.print("menuInformation;");
-
-            while(true) {
-                String st = buff.readLine();
-
-            }
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }*/
     }
 
     @FXML
-    void handleSubmitAction(ActionEvent event) {
+    void handleStartAction(ActionEvent event) {
         if(turn.getText().equals("")) {
             String[] nameAndColor = stage.getTitle().split(" ");
             chessboard = createInitial(nameAndColor[1]);
@@ -393,14 +404,6 @@ public class ChessboardController implements Initializable {
             turn.setText("1");
             hintField.setText(TURN_PLAYER_WHITE);
         }
-    }
-
-    public char getContent(int row, int col) {
-        Chessman chessman = chessboard.getContent(row,col);
-        if (chessman == null) {
-            return ' ';
-        }
-        return chessman.toChar();
     }
 
     public final static Chessman[] CHESSMEN =
@@ -457,13 +460,17 @@ public class ChessboardController implements Initializable {
     @FXML
     void handleBlackBishopClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
@@ -471,162 +478,190 @@ public class ChessboardController implements Initializable {
     @FXML
     void handleBlackKingClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackKnightClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackPawnClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackQueenClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackRookClickedAction(MouseEvent event) {
         if(currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
-    void handleFieldClickedAction(MouseEvent event) {
-        /*if(chessmanIsClicked) {
-            Node clicked = (Node) event.getSource();
-            Integer colIndex = GridPane.getColumnIndex(clicked);
-            Integer rowIndex = GridPane.getRowIndex(clicked);
-
-            if(colIndex == null) {
-                colIndex = 0;
-            } else if(rowIndex == null) {
-                rowIndex = 0;
-            }
-
-            selectField.setText(colIndex + " " + rowIndex);
-        }*/
-    }
+    void handleFieldClickedAction(MouseEvent event) {}
 
     @FXML
     void handleWhiteBishopClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
-
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
+
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
-
-
     @FXML
     void handleWhiteKingClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
 
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleWhiteKnightClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
 
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleWhitePawnClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
 
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleWhiteQueenClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
 
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleWhiteRookClickedAction(MouseEvent event) {
-        if(!currentPlayerBlack) {
-            Node clicked = (Node) event.getSource();
-            int[] rowAndCol = getRowAndColIndex(clicked);
+        if(!currentPlayerBlack && !turn.getText().equals("")) {
+            chessmanPosition = null;
 
-            Chessman chessman = chessboard.getContent(rowAndCol[0], rowAndCol[1]);
+            Node clicked = (Node) event.getSource();
+            chessmanPosition = getRowAndColIndex(clicked);
+
+            Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
             chessmanIsClicked = true;
 
-            setMarker(chessman, rowAndCol[0], rowAndCol[1]);
+            currentChessmanID = clicked.getId();
+            selectChessman.setText(currentChessmanID);
+            setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
@@ -636,11 +671,10 @@ public class ChessboardController implements Initializable {
 
         if(colIndex == null) {
             colIndex = 0;
-        } else if(rowIndex == null) {
+        }
+        if(rowIndex == null) {
             rowIndex = 0;
         }
-
-        selectChessman.setText(clicked.getId());
 
         return new int[]{rowIndex, colIndex};
     }
@@ -657,6 +691,7 @@ public class ChessboardController implements Initializable {
             for(int y = 0; y < whereCanMove.length; y++) {
                 if(whereCanMove[i][y]) {
                     ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(marker);
+                    ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).imageProperty();
                 }
             }
         }

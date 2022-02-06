@@ -32,6 +32,21 @@ public class Chessboard {
         return oldContent;
     }
 
+    public Chessman move(int oldRow, int oldCol, int newRow, int newCol) {
+        Chessman c = content[oldRow][oldCol];
+
+        if(c != null && content[newRow][newCol] == null) {
+            content[oldRow][oldCol] = null;
+            content[newRow][newCol] = c;
+        } else if(c != null && c.canTake(content[newRow][newCol])) {
+            content[oldRow][oldCol] = null;
+            Chessman thrownChessman = content[newRow][newCol];
+            content[newRow][newCol] = c;
+            return thrownChessman;
+        }
+        return null;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof Chessboard) {

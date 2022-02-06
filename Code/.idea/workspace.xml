@@ -11,8 +11,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/project_echess/Chessman/LinearChessman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/project_echess/Chessman/LinearChessman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_whiteSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/project_echess/Chessboard_whiteSide.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/ChessboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_whiteSide.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessboard_whiteSide.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/project_echess/Chessman/Chessboard.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +177,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="chessboard" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/E_Schach_master$ChessClient.ic" NAME="ChessClient Coverage Results" MODIFIED="1643568318695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

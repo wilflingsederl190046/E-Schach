@@ -14,21 +14,18 @@ public class LinearChessman extends AbstractChessman {
     }
 
     private void check(int[] direction, Chessboard board, int row, int col, boolean[][] destinations) {
-        try
-        {
+        try {
             for (int i = 1; i <= range; i++) {
-                if(row < 7 && col < 7 && direction[0] > 0 && direction[1] > 0) {
-                    row = row + direction[0];
-                    col = col + direction[1];
-                    destinations[row][col] = true;
-                }
+                row = row + direction[0];
+                col = col + direction[1];
+                destinations[row][col] = true;
+
                 if (board.getContent(row,col) != null) {
                     break;
                 }
             }
-        }
-        catch(ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch(ArrayIndexOutOfBoundsException e) {
+
         }
     }
 
