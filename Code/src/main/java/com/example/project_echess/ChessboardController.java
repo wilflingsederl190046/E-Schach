@@ -4,11 +4,14 @@ import com.example.project_echess.Chessman.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,7 +19,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -333,9 +338,10 @@ public class ChessboardController implements Initializable {
     private Chessboard chessboard;
 
     boolean currentPlayerBlack = false;
-    boolean chessmanIsClicked = false;
     int[] chessmanPosition;
     String currentChessmanID;
+    String thrownChessmanID;
+    EventHandler<MouseEvent> markedClicked;
 
     Image marker;
 
@@ -346,18 +352,103 @@ public class ChessboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hintField.setText("Click the Start Button to begin with the chess game!");
 
-        marker = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/mark.png")));
+        marker = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Marker_Field.png")));
 
-        EventHandler<MouseEvent> eventHandler = new EventHandler<>() {
+        markedClicked = new EventHandler<>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 Node mark = (Node) mouseEvent.getSource();
-                selectField.setText(mark.getId());
+
+                int columnOfMarkID = Integer.parseInt(mark.getId().substring(1,2)) + 65;
+                char columnOfMarkIDLetter = (char) columnOfMarkID;
+                int rowNumber = Integer.parseInt(mark.getId().substring(2,3)) + 1;
+                switch (rowNumber) {
+                    case 1:
+                        rowNumber = 8;
+                        break;
+                    case 2:
+                        rowNumber = 7;
+                        break;
+                    case 3:
+                        rowNumber = 6;
+                        break;
+                    case 4:
+                        rowNumber = 5;
+                        break;
+                    case 5:
+                        rowNumber = 4;
+                        break;
+                    case 6:
+                        rowNumber = 3;
+                        break;
+                    case 7:
+                        rowNumber = 2;
+                        break;
+                    case 8:
+                        rowNumber = 1;
+                }
+                selectField.setText("" + columnOfMarkIDLetter + rowNumber);
+
                 int[] newPositionChessman = getRowAndColIndex(mark);
 
                 for(int i = 0; i < 8; i++) {
                     for(int y = 0; y < 8; y++) {
                         ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(null);
+                    }
+                }
+
+                for (int i = 0; i < 8; i++) {
+                    for (int y = 0; y < 8; y++) {
+                        gridPane.getChildren().remove(stage.getScene().lookup("#M" + y + "" + i));
+                    }
+                }
+
+                Chessman removed = chessboard.move(chessmanPosition[0], chessmanPosition[1], newPositionChessman[0], newPositionChessman[1]);
+                if(removed != null) {
+                    for(Node n : gridPane.getChildren()) {
+                        Integer rowIndex = GridPane.getRowIndex(n);
+                        Integer columnIndex = GridPane.getColumnIndex(n);
+                        if(rowIndex == null) {
+                            rowIndex = 0;
+                        }
+                        if(columnIndex == null) {
+                            columnIndex = 0;
+                        }
+                        if(rowIndex.intValue() == newPositionChessman[0] && columnIndex.intValue() == newPositionChessman[1] && n instanceof ImageView) {
+                            gridPane.getChildren().remove(n);
+                            break;
+                        }
+                    }
+
+                    if(removed.equals(new King(true)) || removed.equals(new King(false))) {
+                        Alert won = new Alert(Alert.AlertType.INFORMATION);
+                        won.setTitle("You WON");
+                        if(currentPlayerBlack) {
+                            won.setHeaderText("CONGRATULATION Player BLACK, you won the Game :)");
+                        } else {
+                            won.setHeaderText("CONGRATULATION Player WHITE, you won the Game :)");
+                        }
+                        won.setContentText("You will get back to the Menu Screen after hitting the Ok Button");
+                        won.showAndWait();
+                        try {
+                            stage.setTitle("E-Schach");
+                            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                                @Override
+                                public void handle(WindowEvent windowEvent) {
+                                    System.exit(0);
+                                }
+                            });
+                            Scene scene = stage.getScene();
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+
+                            Parent root = (Parent) loader.load();
+                            scene.setRoot(root);
+
+                            MenuController controller = (MenuController) loader.getController();
+                            controller.setPrimaryStage(stage);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
                     }
                 }
 
@@ -368,7 +459,6 @@ public class ChessboardController implements Initializable {
                         break;
                     }
                 }
-                chessboard.move(chessmanPosition[0], chessmanPosition[1], newPositionChessman[0], newPositionChessman[1]);
 
                 if(currentPlayerBlack) {
                     currentPlayerBlack = false;
@@ -378,19 +468,20 @@ public class ChessboardController implements Initializable {
                     currentPlayerBlack = true;
                     hintField.setText(TURN_PLAYER_BLACK);
                 }
+
             }
         };
 
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+            for (int y = 0; y < 8; y++) {
                 ImageView img = new ImageView();
-                img.setId("M" + i + j);
+                img.setId("M" + i + y);
                 img.setFitHeight(35);
                 img.setFitWidth(35);
                 GridPane.setHalignment(img, HPos.CENTER);
                 GridPane.setValignment(img, VPos.CENTER);
-                gridPane.add(img, i, j);
-                img.addEventHandler(MouseEvent.MOUSE_CLICKED, eventHandler);
+                gridPane.add(img, i, y);
+                img.addEventHandler(MouseEvent.MOUSE_CLICKED, markedClicked);
             }
         }
     }
@@ -436,7 +527,7 @@ public class ChessboardController implements Initializable {
 
     protected Chessboard createInitial(String color) {
         Chessboard board = new Chessboard(8, 8);
-        if(color.equals("BLACK")) {
+        if(color.trim().equals("BLACK")) {
             for (int i = 7; i >= 0; i--) {
                 for (int j = 7; j >= 0; j--) {
                     if (BOARD_AT_START_WHITE[i][j] > -1) {
@@ -459,9 +550,8 @@ public class ChessboardController implements Initializable {
 
     @FXML
     void handleBlackBishopClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -469,7 +559,7 @@ public class ChessboardController implements Initializable {
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
@@ -477,9 +567,8 @@ public class ChessboardController implements Initializable {
 
     @FXML
     void handleBlackKingClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -494,9 +583,8 @@ public class ChessboardController implements Initializable {
 
     @FXML
     void handleBlackKnightClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -504,16 +592,15 @@ public class ChessboardController implements Initializable {
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackPawnClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -521,16 +608,15 @@ public class ChessboardController implements Initializable {
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
     void handleBlackQueenClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -545,9 +631,8 @@ public class ChessboardController implements Initializable {
 
     @FXML
     void handleBlackRookClickedAction(MouseEvent event) {
-        if(currentPlayerBlack) {
+        if(currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -555,19 +640,15 @@ public class ChessboardController implements Initializable {
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
 
     @FXML
-    void handleFieldClickedAction(MouseEvent event) {}
-
-    @FXML
     void handleWhiteBishopClickedAction(MouseEvent event) {
         if(!currentPlayerBlack && !turn.getText().equals("")) {
             chessmanPosition = null;
-            chessmanIsClicked = true;
 
             Node clicked = (Node) event.getSource();
             chessmanPosition = getRowAndColIndex(clicked);
@@ -575,7 +656,7 @@ public class ChessboardController implements Initializable {
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
@@ -589,7 +670,6 @@ public class ChessboardController implements Initializable {
             chessmanPosition = getRowAndColIndex(clicked);
 
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
-            chessmanIsClicked = true;
 
             currentChessmanID = clicked.getId();
             selectChessman.setText(currentChessmanID);
@@ -606,10 +686,9 @@ public class ChessboardController implements Initializable {
             chessmanPosition = getRowAndColIndex(clicked);
 
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
-            chessmanIsClicked = true;
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
@@ -623,10 +702,9 @@ public class ChessboardController implements Initializable {
             chessmanPosition = getRowAndColIndex(clicked);
 
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
-            chessmanIsClicked = true;
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
@@ -640,7 +718,6 @@ public class ChessboardController implements Initializable {
             chessmanPosition = getRowAndColIndex(clicked);
 
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
-            chessmanIsClicked = true;
 
             currentChessmanID = clicked.getId();
             selectChessman.setText(currentChessmanID);
@@ -657,10 +734,9 @@ public class ChessboardController implements Initializable {
             chessmanPosition = getRowAndColIndex(clicked);
 
             Chessman chessman = chessboard.getContent(chessmanPosition[0], chessmanPosition[1]);
-            chessmanIsClicked = true;
 
             currentChessmanID = clicked.getId();
-            selectChessman.setText(currentChessmanID);
+            selectChessman.setText(currentChessmanID.substring(0, clicked.getId().length()-1));
             setMarker(chessman, chessmanPosition[0], chessmanPosition[1]);
         }
     }
@@ -680,9 +756,22 @@ public class ChessboardController implements Initializable {
     }
 
     private void setMarker(Chessman chessman, int row, int column) {
-        for(int i = 0; i < 8; i++) {
-            for(int y = 0; y < 8; y++) {
-                ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(null);
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y < 8; y++) {
+                gridPane.getChildren().remove(stage.getScene().lookup("#M" + y + "" + i));
+            }
+        }
+
+        for (int i = 0; i < 8; i++) {
+            for (int y = 0; y < 8; y++) {
+                ImageView img = new ImageView();
+                img.setId("M" + i + y);
+                img.setFitHeight(35);
+                img.setFitWidth(35);
+                GridPane.setHalignment(img, HPos.CENTER);
+                GridPane.setValignment(img, VPos.CENTER);
+                gridPane.add(img, i, y);
+                img.addEventHandler(MouseEvent.MOUSE_CLICKED, markedClicked);
             }
         }
 

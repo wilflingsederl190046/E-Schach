@@ -8,13 +8,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class MenuController {
 
@@ -49,7 +48,15 @@ public class MenuController {
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     @Override
                     public void handle(WindowEvent windowEvent) {
-                        System.exit(0);
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        alert.setTitle("Leave Confirmation");
+                        alert.setHeaderText("Are you sure you want to quit this session and exit the program?");
+                        Optional<ButtonType> result = alert.showAndWait();
+
+                        if(result.get() == ButtonType.OK){
+                            System.exit(0);
+                        }
+                        windowEvent.consume();
                     }
                 });
                 Scene scene = stage.getScene();

@@ -1,10 +1,14 @@
 package com.example.project_echess;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -14,11 +18,31 @@ public class ChessServer {
     private final List<ChessWorker> clients;
     private final int portNumber;
     private boolean stop;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
+    private Map<String, ObjectOutputStream> allWriter = new HashMap<>();
+    private Map<String, ObjectInputStream> allReader = new HashMap<>();
 
     public ChessServer(int portNumber) {
         this.portNumber = portNumber;
         pool = Executors.newFixedThreadPool(2);
         clients = new ArrayList<>();
+    }
+
+    public Map<String, ObjectOutputStream> getAllWriter() {
+        return allWriter;
+    }
+
+    public void setAllWriter(Map<String, ObjectOutputStream> allWriter) {
+        this.allWriter = allWriter;
+    }
+
+    public Map<String, ObjectInputStream> getAllReader() {
+        return allReader;
+    }
+
+    public void setAllReader(Map<String, ObjectInputStream> allReader) {
+        this.allReader = allReader;
     }
 
     private void runServer(){
@@ -27,14 +51,13 @@ public class ChessServer {
         try{
             ServerSocket serverSocket = new ServerSocket(portNumber);
             stop = false;
+            int counter = 0;
 
             while(!stop){
                 Socket clientSocket = serverSocket.accept();
+                counter++;
                 System.out.println("SERVER: client connected");
-                //startHandle();
-                ChessWorker worker = new ChessWorker(clientSocket);
-                pool.execute(worker);
-                clients.add(worker);
+                startHandle(clientSocket, counter + "");
 
             }
         } catch (IOException e) {
@@ -42,15 +65,15 @@ public class ChessServer {
         }
     }
 
-    /*private void startHandle() {
-        Thread thread = new Thread(){
-            @Override
-            public void run(){
-
-            }
-        };
-        thread.start();
-    }*/
+    private void startHandle(Socket clientSocket, String user) throws IOException {
+        ObjectInputStream in = new ObjectInputStream(clientSocket.getInputStream());
+        ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream());
+        allReader.put(user, in);
+        allWriter.put(user, out);
+        ChessWorker worker = new ChessWorker(allWriter, allReader, this, user);
+        pool.execute(worker);
+        clients.add(worker);
+    }
 
     public void stop(){
         for(ChessWorker st : clients) {
@@ -67,21 +90,5 @@ public class ChessServer {
     public static void main(String[] args) {
         new ChessServer(4445).activate();
     }
-
-    /*public static void main(String[] args) {
-        try (ServerSocket s = new ServerSocket(PORT)) {
-            System.out.println("server started");
-            while (true) {
-                try {
-                    new Thread(new ChessWorker(s.accept())).start();
-                    System.out.println("client connected");
-                } catch (IOException e) {
-                    throw new RuntimeException("ERROR: unable to instantiate reader and writer", e);
-                }
-            }
-        } catch (Exception e) {
-            throw new RuntimeException("ERROR: unable to instantiate the server socket", e);
-        }
-    }*/
 }
 

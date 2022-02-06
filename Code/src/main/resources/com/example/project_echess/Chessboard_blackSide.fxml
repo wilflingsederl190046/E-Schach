@@ -103,164 +103,167 @@
             <Rectangle fx:id="H3" arcHeight="5.0" arcWidth="5.0" fill="NAVAJOWHITE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="75.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
             <Rectangle fx:id="H2" arcHeight="5.0" arcWidth="5.0" fill="#cd853fb0" height="75.0" stroke="BLACK" strokeType="INSIDE" width="75.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
             <Rectangle fx:id="H1" arcHeight="5.0" arcWidth="5.0" fill="NAVAJOWHITE" height="75.0" stroke="BLACK" strokeType="INSIDE" width="75.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <ImageView fx:id="rookBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+            <ImageView fx:id="rookBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_rdt60.png" />
+                  <Image url="@Pictures/Black_Rook.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack1" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack1" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="knightBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <ImageView fx:id="knightBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_ndt60.png" />
+                  <Image url="@Pictures/Black_Knight.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack2" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack2" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bishopBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+            <ImageView fx:id="bishopBlackL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_bdt60.png" />
+                  <Image url="@Pictures/Black_Bishop.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack3" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack3" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="queenBlack" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleQueenClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <ImageView fx:id="queenBlack" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackQueenClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_qdt60.png" />
+                  <Image url="@Pictures/Black_Queen.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack4" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack4" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="kingBlack" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleKindClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
+            <ImageView fx:id="kingBlack" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackKingClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_kdt60.png" />
+                  <Image url="@Pictures/Black_King.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack5" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack5" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bishopBlackR" fitHeight="75.0" fitWidth="75.0" layoutX="75.0" layoutY="75.0" onMouseClicked="#handleBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
+            <ImageView fx:id="bishopBlackR" fitHeight="75.0" fitWidth="75.0" layoutX="75.0" layoutY="75.0" onMouseClicked="#handleBlackBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_bdt60.png" />
+                  <Image url="@Pictures/Black_Bishop.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack6" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack6" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="knightBlackR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
+            <ImageView fx:id="knightBlackR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_ndt60.png" />
+                  <Image url="@Pictures/Black_Knight.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack7" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack7" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="rookBlackR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
+            <ImageView fx:id="rookBlackR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_rdt60.png" />
+                  <Image url="@Pictures/Black_Rook.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnBlack8" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handlePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
+            <ImageView fx:id="pawnBlack8" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleBlackPawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_pdt60.png" />
+                  <Image url="@Pictures/Black_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="rookWhiteL" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pawnWhite1" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_rlt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="knightWhiteL" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            <ImageView fx:id="rookWhiteL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteRookClickedAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Pictures/Chess_nlt60 (1).png" />
+                  <Image url="@Pictures/White_Rook.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bishopWhiteL" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+            <ImageView fx:id="pawnWhite2" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_blt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="kingWhite" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+            <ImageView fx:id="knightWhiteL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_klt60.png" />
+                  <Image url="@Pictures/White_Knight.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="queenWhite" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+            <ImageView fx:id="pawnWhite3" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_qlt60 (1).png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="bishopWhiteR" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+            <ImageView fx:id="bishopWhiteL" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
-                  <Image url="@Pictures/Chess_blt60.png" />
+                  <Image url="@Pictures/White_Bishop.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="knightWhiteR" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+            <ImageView fx:id="pawnWhite4" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_nlt60 (1).png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="rookWhiteR" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+            <ImageView fx:id="kingWhite" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteKingClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                <image>
-                  <Image url="@Pictures/Chess_rlt60.png" />
+                  <Image url="@Pictures/White_King.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite1" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <ImageView fx:id="pawnWhite5" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite2" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="queenWhite" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteQueenClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Queen.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite3" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ImageView fx:id="pawnWhite6" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite4" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <ImageView fx:id="bishopWhiteR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteBishopClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Bishop.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite5" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <ImageView fx:id="pawnWhite7" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite6" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <ImageView fx:id="knightWhiteR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteKnightClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Knight.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="pawnWhite7" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+            <ImageView fx:id="pawnWhite8" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhitePawnClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Pawn.png" />
                </image>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
             </ImageView>
-            <ImageView fx:id="pawnWhite8" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            <ImageView fx:id="rookWhiteR" fitHeight="75.0" fitWidth="75.0" onMouseClicked="#handleWhiteRookClickedAction" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
                <image>
-                  <Image url="@Pictures/Chess_plt60.png" />
+                  <Image url="@Pictures/White_Rook.png" />
                </image>
             </ImageView>
          </children>
@@ -352,12 +355,12 @@
       </Label>
       <ImageView fitHeight="75.0" fitWidth="96.0" layoutX="160.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Pictures/Chess_qlt60 (1).png" />
+            <Image url="@Pictures/White_Queen.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="933.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Pictures/Chess_nlt60 (1).png" />
+            <Image url="@Pictures/White_Knight.png" />
          </image>
       </ImageView>
       <Label layoutX="16.0" layoutY="140.0" text="Username:">
@@ -365,23 +368,41 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="userName" editable="false" layoutX="104.0" layoutY="140.0" />
-      <Label layoutX="36.0" layoutY="184.0" text="Turn:">
+      <TextField fx:id="userName" alignment="CENTER" editable="false" layoutX="104.0" layoutY="140.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <Label layoutX="37.0" layoutY="184.0" text="Turn:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="turn" editable="false" layoutX="104.0" layoutY="184.0" />
-      <TextField fx:id="hintField" editable="false" layoutX="198.0" layoutY="774.0" prefHeight="67.0" prefWidth="801.0" />
-      <TextField fx:id="selectChessman" layoutX="104.0" layoutY="636.0" prefHeight="25.0" prefWidth="149.0" />
-      <TextField fx:id="selectField" layoutX="104.0" layoutY="678.0" />
-      <Button layoutX="198.0" layoutY="729.0" mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit" />
-      <Label layoutX="13.0" layoutY="636.0" text="Select man:">
+      <TextField fx:id="turn" alignment="CENTER" editable="false" layoutX="104.0" layoutY="184.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="hintField" alignment="CENTER" editable="false" layoutX="198.0" layoutY="774.0" prefHeight="67.0" prefWidth="801.0" style="-fx-text-inner-color: red;">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></TextField>
+      <TextField fx:id="selectChessman" alignment="CENTER" editable="false" layoutX="116.0" layoutY="636.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="selectField" alignment="CENTER" editable="false" layoutX="116.0" layoutY="678.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <Button layoutX="206.0" layoutY="729.0" mnemonicParsing="false" onAction="#handleStartAction" prefHeight="25.0" prefWidth="58.0" text="Start">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="4.0" layoutY="636.0" text="Selected man:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="12.0" layoutY="678.0" text="Select field:">
+      <Label layoutX="4.0" layoutY="678.0" text="Selected field:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>

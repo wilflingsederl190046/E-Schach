@@ -1,30 +1,33 @@
 package com.example.project_echess;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 class ChessWorker implements Runnable {
 
-    private Socket socket;
-    private Scanner in;
-    private PrintWriter out;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
+    private ObjectInputStream inGegner;
+    private ObjectOutputStream outGegner;
     private boolean stop;
     private boolean clientBlack;
     private boolean clientWhite;
+    private ChessServer chessServer;
+    private String user;
+    private String message;
+    private Map<String, ObjectOutputStream> allWriter = new HashMap<>();
+    private Map<String, ObjectInputStream> allReader = new HashMap<>();
 
-    public ChessWorker(Socket socket) {
-        try {
-            this.socket = socket;
-            this.in = new Scanner(socket.getInputStream());
-            this.out = new PrintWriter(socket.getOutputStream(), true);
-            this.clientBlack = false;
-            this.clientWhite = false;
-        } catch (IOException e) {
-            throw new RuntimeException("ERROR: unable to instantiate reader and writer", e);
-        }
+    public ChessWorker(Map<String, ObjectOutputStream> allWriter, Map<String, ObjectInputStream> allReader, ChessServer chessServer, String user) {
+        this.chessServer = chessServer;
+        this.clientBlack = false;
+        this.clientWhite = false;
+        this.user = user;
+        this.allWriter = allWriter;
+        this.allReader = allReader;
     }
 
     @Override
@@ -32,27 +35,45 @@ class ChessWorker implements Runnable {
         stop = false;
         String inputString;
         while (!stop) {
-            if ((inputString = in.nextLine()) != null) {
-                /*if(inputString.equals("clientBLACKIsHere") && !clientBlack) {
-                    clientBlack = true;
-                } else if(inputString.equals("clientWHITEIsHere") && !clientWhite) {
-                    clientWhite = true;
-                } else {
-                    out.write("denied");
-                    System.out.println("DENIED");
-                }*/
+            try {
+
+                for (String s : allWriter.keySet()) {
+                    if (s.equals(user)) {
+                        in = allReader.get(s);
+                        out = allWriter.get(s);
+                    } else {
+                        inGegner = allReader.get(s);
+                        outGegner = allWriter.get(s);
+                        stop = true;
+                    }
+                }
 
 
+                Thread.sleep(10);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
+        boolean running = true;
+        while (true) {
 
-        try {
-            in.close();
-            out.close();
-            socket.close();
-        } catch (IOException e) {
-            throw new RuntimeException("ERROR: unable to close reader, writer and socket", e);
+            try {
+                if (running) {
+                    message = (String) in.readObject();
+                    out.writeObject(message);
+                } else {
+                    message = (String) inGegner.readObject();
+                    outGegner.writeObject(message);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            running = !running;
         }
+
     }
 
     void stopServerTread() {
