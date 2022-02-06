@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -23,6 +24,9 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable {
@@ -337,13 +341,20 @@ public class ChessboardController implements Initializable {
 
     private Chessboard chessboard;
 
-    boolean currentPlayerBlack = false;
-    int[] chessmanPosition;
-    String currentChessmanID;
-    String thrownChessmanID;
-    EventHandler<MouseEvent> markedClicked;
+    private boolean currentPlayerBlack = false;
+    private int[] chessmanPosition;
+    private String currentChessmanID;
 
-    Image marker;
+    private EventHandler<MouseEvent> markedClicked;
+    private Image marker;
+    private Image whiteRook;
+    private Image whiteKnight;
+    private Image whiteBishop;
+    private Image whiteQueen;
+    private Image blackRook;
+    private Image blackKnight;
+    private Image blackBishop;
+    private Image blackQueen;
 
     final private String TURN_PLAYER_BLACK = "Player BLACK is next!";
     final private String TURN_PLAYER_WHITE = "Player WHITE is next!";
@@ -351,51 +362,24 @@ public class ChessboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         hintField.setText("Click the Start Button to begin with the chess game!");
-
         marker = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Marker_Field.png")));
+        whiteRook = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/White_Rook.png")));
+        whiteKnight = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/White_Knight.png")));
+        whiteBishop = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/White_Bishop.png")));
+        whiteQueen = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/White_Queen.png")));
+        blackRook = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Black_Rook.png")));
+        blackKnight = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Black_Knight.png")));
+        blackBishop = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Black_Bishop.png")));
+        blackQueen = new Image(String.valueOf(this.getClass().getResource("/com/example/project_echess/Pictures/Black_Queen.png")));
 
         markedClicked = new EventHandler<>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 Node mark = (Node) mouseEvent.getSource();
-
-                int columnOfMarkID = Integer.parseInt(mark.getId().substring(1,2)) + 65;
-                char columnOfMarkIDLetter = (char) columnOfMarkID;
-                int rowNumber = Integer.parseInt(mark.getId().substring(2,3)) + 1;
-                switch (rowNumber) {
-                    case 1:
-                        rowNumber = 8;
-                        break;
-                    case 2:
-                        rowNumber = 7;
-                        break;
-                    case 3:
-                        rowNumber = 6;
-                        break;
-                    case 4:
-                        rowNumber = 5;
-                        break;
-                    case 5:
-                        rowNumber = 4;
-                        break;
-                    case 6:
-                        rowNumber = 3;
-                        break;
-                    case 7:
-                        rowNumber = 2;
-                        break;
-                    case 8:
-                        rowNumber = 1;
-                }
-                selectField.setText("" + columnOfMarkIDLetter + rowNumber);
+                selectField.setText(getChessboardPosition(mark));
 
                 int[] newPositionChessman = getRowAndColIndex(mark);
-
-                for(int i = 0; i < 8; i++) {
-                    for(int y = 0; y < 8; y++) {
-                        ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(null);
-                    }
-                }
+                clearAllMarker();
 
                 for (int i = 0; i < 8; i++) {
                     for (int y = 0; y < 8; y++) {
@@ -404,71 +388,12 @@ public class ChessboardController implements Initializable {
                 }
 
                 Chessman removed = chessboard.move(chessmanPosition[0], chessmanPosition[1], newPositionChessman[0], newPositionChessman[1]);
-                if(removed != null) {
-                    for(Node n : gridPane.getChildren()) {
-                        Integer rowIndex = GridPane.getRowIndex(n);
-                        Integer columnIndex = GridPane.getColumnIndex(n);
-                        if(rowIndex == null) {
-                            rowIndex = 0;
-                        }
-                        if(columnIndex == null) {
-                            columnIndex = 0;
-                        }
-                        if(rowIndex.intValue() == newPositionChessman[0] && columnIndex.intValue() == newPositionChessman[1] && n instanceof ImageView) {
-                            gridPane.getChildren().remove(n);
-                            break;
-                        }
-                    }
+                captureChessmen(removed, newPositionChessman[0], newPositionChessman[1]);
 
-                    if(removed.equals(new King(true)) || removed.equals(new King(false))) {
-                        Alert won = new Alert(Alert.AlertType.INFORMATION);
-                        won.setTitle("You WON");
-                        if(currentPlayerBlack) {
-                            won.setHeaderText("CONGRATULATION Player BLACK, you won the Game :)");
-                        } else {
-                            won.setHeaderText("CONGRATULATION Player WHITE, you won the Game :)");
-                        }
-                        won.setContentText("You will get back to the Menu Screen after hitting the Ok Button");
-                        won.showAndWait();
-                        try {
-                            stage.setTitle("E-Schach");
-                            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                                @Override
-                                public void handle(WindowEvent windowEvent) {
-                                    System.exit(0);
-                                }
-                            });
-                            Scene scene = stage.getScene();
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+                moveOnVisualBoard(newPositionChessman[1], newPositionChessman[0]);
+                checkIfPawnIsOnLast();
 
-                            Parent root = (Parent) loader.load();
-                            scene.setRoot(root);
-
-                            MenuController controller = (MenuController) loader.getController();
-                            controller.setPrimaryStage(stage);
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                    }
-                }
-
-                for(Node n : gridPane.getChildren()) {
-                    if(n.getId().equals(currentChessmanID)) {
-                        gridPane.getChildren().remove(n);
-                        gridPane.add(n, newPositionChessman[1], newPositionChessman[0]);
-                        break;
-                    }
-                }
-
-                if(currentPlayerBlack) {
-                    currentPlayerBlack = false;
-                    hintField.setText(TURN_PLAYER_WHITE);
-                    turn.setText(Integer.toString(Integer.parseInt(turn.getText()) + 1));
-                } else {
-                    currentPlayerBlack = true;
-                    hintField.setText(TURN_PLAYER_BLACK);
-                }
-
+                nextTurn();
             }
         };
 
@@ -483,6 +408,241 @@ public class ChessboardController implements Initializable {
                 gridPane.add(img, i, y);
                 img.addEventHandler(MouseEvent.MOUSE_CLICKED, markedClicked);
             }
+        }
+    }
+
+    private void checkIfPawnIsOnLast() {
+        List<Node> nodeList = new ArrayList<>();
+        for(Node n : gridPane.getChildren()) {
+            if(n instanceof ImageView && n.getId() != null) {
+                nodeList.add(n);
+            }
+        }
+
+        for(Node n : nodeList) {
+            if(n.getId().contains("pawnBlack")) {
+                Node pawn = stage.getScene().lookup("#" + n.getId());
+                int[] rowAndCol = getRowAndColIndex(pawn);
+                if(rowAndCol[0] == 7) {
+                    promotePawnWhenOnLast(pawn, rowAndCol, 'b');
+                    break;
+                }
+            } else if(n.getId().contains("pawnWhite")) {
+                Node pawn = stage.getScene().lookup("#" + n.getId());
+                int[] rowAndCol = getRowAndColIndex(pawn);
+                if(rowAndCol[0] == 0) {
+                    promotePawnWhenOnLast(pawn, rowAndCol, 'w');
+                    break;
+                }
+            }
+        }
+    }
+
+    private void promotePawnWhenOnLast(Node pawn, int[] rowAndCol, char color) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Promote a piece");
+        alert.setHeaderText("You can promote your pawn into another piece");
+        alert.setContentText("Choose one of the following piece");
+
+        ButtonType buttonRook = new ButtonType("Rook");
+        ButtonType buttonKnight = new ButtonType("Knight");
+        ButtonType buttonBishop = new ButtonType("Bishop");
+        ButtonType buttonQueen = new ButtonType("Queen");
+
+        alert.getButtonTypes().setAll(buttonRook, buttonKnight, buttonBishop, buttonQueen);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonRook){
+            if(color == 'b') {
+                Rook r = new Rook(true);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], r);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(blackRook);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            } else if(color == 'w') {
+                Rook r = new Rook(false);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], r);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(whiteRook);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            }
+        } else if (result.get() == buttonKnight) {
+            if(color == 'b') {
+                Knight k = new Knight(true);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], k);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(blackKnight);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            } else if(color == 'w') {
+                Knight k = new Knight(false);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], k);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(whiteKnight);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            }
+        } else if (result.get() == buttonBishop) {
+            if(color == 'b') {
+                Bishop b = new Bishop(true);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], b);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(blackBishop);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            } else if(color == 'w') {
+                Bishop b = new Bishop(false);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], b);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(whiteBishop);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            }
+        } else if (result.get() == buttonQueen) {
+            if(color == 'b') {
+                Queen q = new Queen(true);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], q);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(blackQueen);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            } else if(color == 'w') {
+                Queen q = new Queen(false);
+                chessboard.setContent(rowAndCol[0], rowAndCol[1], q);
+
+                gridPane.getChildren().remove(pawn);
+                ImageView i = new ImageView();
+                i.setImage(whiteQueen);
+                gridPane.add(i, rowAndCol[0], rowAndCol[1]);
+            }
+        }
+    }
+
+    private void moveOnVisualBoard(int col, int row) {
+        for(Node n : gridPane.getChildren()) {
+            if(n.getId().equals(currentChessmanID)) {
+                gridPane.getChildren().remove(n);
+                gridPane.add(n, col, row);
+                break;
+            }
+        }
+    }
+
+    private void nextTurn() {
+        if(currentPlayerBlack) {
+            currentPlayerBlack = false;
+            hintField.setText(TURN_PLAYER_WHITE);
+            turn.setText(Integer.toString(Integer.parseInt(turn.getText()) + 1));
+        } else {
+            currentPlayerBlack = true;
+            hintField.setText(TURN_PLAYER_BLACK);
+        }
+    }
+
+    private void clearAllMarker() {
+        for(int i = 0; i < 8; i++) {
+            for(int y = 0; y < 8; y++) {
+                ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(null);
+            }
+        }
+    }
+
+    private String getChessboardPosition(Node mark) {
+        int columnOfMarkID = Integer.parseInt(mark.getId().substring(1,2)) + 65;
+        char columnOfMarkIDLetter = (char) columnOfMarkID;
+        int rowNumber = Integer.parseInt(mark.getId().substring(2,3)) + 1;
+        switch (rowNumber) {
+            case 1:
+                rowNumber = 8;
+                break;
+            case 2:
+                rowNumber = 7;
+                break;
+            case 3:
+                rowNumber = 6;
+                break;
+            case 4:
+                rowNumber = 5;
+                break;
+            case 5:
+                rowNumber = 4;
+                break;
+            case 6:
+                rowNumber = 3;
+                break;
+            case 7:
+                rowNumber = 2;
+                break;
+            case 8:
+                rowNumber = 1;
+        }
+        return "" + columnOfMarkIDLetter + rowNumber;
+    }
+
+    private void captureChessmen(Chessman removed, int row, int col) {
+        if(removed != null) {
+            for (Node n : gridPane.getChildren()) {
+                Integer rowIndex = GridPane.getRowIndex(n);
+                Integer columnIndex = GridPane.getColumnIndex(n);
+                if (rowIndex == null) {
+                    rowIndex = 0;
+                }
+                if (columnIndex == null) {
+                    columnIndex = 0;
+                }
+                if (rowIndex.intValue() == row && columnIndex.intValue() == col && n instanceof ImageView) {
+                    gridPane.getChildren().remove(n);
+                    break;
+                }
+            }
+
+            if (removed.equals(new King(true)) || removed.equals(new King(false))) {
+                checkmate();
+            }
+        }
+    }
+
+    private void checkmate() {
+        Alert won = new Alert(Alert.AlertType.INFORMATION);
+        won.setTitle("You WON");
+        if (currentPlayerBlack) {
+            won.setHeaderText("CONGRATULATION Player BLACK, you won the Game :)");
+        } else {
+            won.setHeaderText("CONGRATULATION Player WHITE, you won the Game :)");
+        }
+        won.setContentText("You will get back to the Menu Screen after hitting the Ok Button");
+        won.showAndWait();
+        try {
+            stage.setMinHeight(400);
+            stage.setMaxHeight(400);
+            stage.setMinWidth(600);
+            stage.setMaxWidth(600);
+            stage.setTitle("E-Schach");
+            stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent windowEvent) {
+                    System.exit(0);
+                }
+            });
+            Scene scene = stage.getScene();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+
+            Parent root = (Parent) loader.load();
+            scene.setRoot(root);
+
+            MenuController controller = (MenuController) loader.getController();
+            controller.setPrimaryStage(stage);
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -780,7 +940,6 @@ public class ChessboardController implements Initializable {
             for(int y = 0; y < whereCanMove.length; y++) {
                 if(whereCanMove[i][y]) {
                     ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).setImage(marker);
-                    ((ImageView) stage.getScene().lookup("#M" + y + "" + i)).imageProperty();
                 }
             }
         }

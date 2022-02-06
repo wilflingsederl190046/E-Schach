@@ -1,0 +1,9 @@
+E-Schach Anleitung:
+
+Sie kommen zuerst in ein Menü, indem Sie Ihren Usernamen und eine Farbe auswählen können.
+Nachdem Sie diese zwei Optionen ausgewählt haben können Sie den Start-Button drücken und werden automatisch auf des entsprechenede Schachfeld zugewiesen.
+Nun können Sie auf den Start-Button drücken, um das Spiel zu starten. Links wird die ausgewählte Schachfigur und das angeklickte Feld ausgegeben.
+Weiß fängt an und darf den ersten Zug machen, dies sieht man auch unten in einem Hinweisfeld.
+Wichtig anzumerken ist, dass wenn man eine Figur anklickt immer angezeigt wird, wo man hin kann und man den Zug nur ausführt wenn man genau auf den gelben Kreis klickt.
+Sie können sonst ganz normal Schach auf einem Feld spielen.
+Wenn das Spiel durch das schließen des Fensters abgebrochen wird oder wenn Sie gewonnen haben, kommen Sie zurück zum Menü und können ein neues Spiel anfangen.

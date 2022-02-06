@@ -50,11 +50,33 @@ public class MenuController {
                     public void handle(WindowEvent windowEvent) {
                         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                         alert.setTitle("Leave Confirmation");
-                        alert.setHeaderText("Are you sure you want to quit this session and exit the program?");
+                        alert.setHeaderText("Are you sure you want to quit this session and get back to the menu?");
                         Optional<ButtonType> result = alert.showAndWait();
 
                         if(result.get() == ButtonType.OK){
-                            System.exit(0);
+                            try {
+                                stage.setMinHeight(390);
+                                stage.setMaxHeight(390);
+                                stage.setMinWidth(610);
+                                stage.setMaxWidth(610);
+                                stage.setTitle("E-Schach");
+                                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                                    @Override
+                                    public void handle(WindowEvent windowEvent) {
+                                        System.exit(0);
+                                    }
+                                });
+                                Scene scene = stage.getScene();
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+
+                                Parent root = (Parent) loader.load();
+                                scene.setRoot(root);
+
+                                MenuController controller = (MenuController) loader.getController();
+                                controller.setPrimaryStage(stage);
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
                         }
                         windowEvent.consume();
                     }

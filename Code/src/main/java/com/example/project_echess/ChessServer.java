@@ -66,8 +66,8 @@ public class ChessServer {
     }
 
     private void startHandle(Socket clientSocket, String user) throws IOException {
-        ObjectInputStream in = new ObjectInputStream(clientSocket.getInputStream());
-        ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream());
+        in = new ObjectInputStream(clientSocket.getInputStream());
+        out = new ObjectOutputStream(clientSocket.getOutputStream());
         allReader.put(user, in);
         allWriter.put(user, out);
         ChessWorker worker = new ChessWorker(allWriter, allReader, this, user);

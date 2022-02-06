@@ -1,9 +1,6 @@
 package com.example.project_echess;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.time.LocalTime;
@@ -16,6 +13,9 @@ public class ChessClient {
     private final String hostName;
     private final  int portNumber;
     private  boolean stop;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
+    private Socket socket;
 
     ChessClient(String userName, String color, String hostName, int portNumber)  {
         this.userName = userName;
@@ -27,18 +27,12 @@ public class ChessClient {
     private void runClient(){
         try {
             stop = false;
-            Socket socket = new Socket(hostName, portNumber);
-            DataInputStream in = new DataInputStream( socket.getInputStream() );
-            DataOutputStream out = new DataOutputStream(socket.getOutputStream() );
-            out.writeUTF(getClientMessage());
-
-
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
-            writer.println("client" + color.toUpperCase() + "IsHere");
+            socket = new Socket(hostName, portNumber);
+            in = new ObjectInputStream(socket.getInputStream() );
+            out = new ObjectOutputStream(socket.getOutputStream() );
 
             while (!stop) {
                 TimeUnit.SECONDS.sleep(3);
-                out.writeUTF(getClientMessage());
             }
 
         } catch (UnknownHostException | InterruptedException e) {
@@ -46,6 +40,14 @@ public class ChessClient {
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
+        } finally {
+            try {
+                socket.close();
+                in.close();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
