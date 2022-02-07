@@ -36,15 +36,16 @@ class ChessWorker implements Runnable {
         String inputString;
         while (!stop) {
             try {
-
-                for (String s : allWriter.keySet()) {
-                    if (s.equals(user)) {
-                        in = allReader.get(s);
-                        out = allWriter.get(s);
-                    } else {
-                        inGegner = allReader.get(s);
-                        outGegner = allWriter.get(s);
-                        stop = true;
+                if(allWriter.keySet().size()>=2) {
+                    for (String s : allWriter.keySet()) {
+                        if (s.equals(user)) {
+                            in = allReader.get(s);
+                            out = allWriter.get(s);
+                        } else {
+                            inGegner = allReader.get(s);
+                            outGegner = allWriter.get(s);
+                            stop = true;
+                        }
                     }
                 }
 
@@ -55,16 +56,23 @@ class ChessWorker implements Runnable {
             }
         }
         boolean running = true;
+        int count = 0;
+        String message1 = "";
         while (true) {
 
             try {
+                if(count == 0){
+                    message1 = (String) inGegner.readObject();
+                    System.out.println(message1);
+                }
                 if (running) {
                     message = (String) in.readObject();
-                    out.writeObject(message);
+                    outGegner.writeObject(message);
                 } else {
                     message = (String) inGegner.readObject();
-                    outGegner.writeObject(message);
+                    out.writeObject(message);
                 }
+                count++;
 
             } catch (IOException e) {
                 e.printStackTrace();

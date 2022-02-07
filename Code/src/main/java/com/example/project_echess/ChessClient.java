@@ -5,6 +5,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.PrimitiveIterator;
 import java.util.concurrent.TimeUnit;
 
 public class ChessClient {
@@ -13,11 +14,12 @@ public class ChessClient {
     private final String hostName;
     private final  int portNumber;
     private  boolean stop;
-    private ObjectInputStream in;
-    private ObjectOutputStream out;
+    private static ObjectOutputStream out;
+    private  static ObjectInputStream in;
     private Socket socket;
+    private PrintWriter writer;
 
-    ChessClient(String userName, String color, String hostName, int portNumber)  {
+    public ChessClient(String userName, String color, String hostName, int portNumber)  {
         this.userName = userName;
         this.color = color;
         this.hostName = hostName;
@@ -28,11 +30,16 @@ public class ChessClient {
         try {
             stop = false;
             socket = new Socket(hostName, portNumber);
-            in = new ObjectInputStream(socket.getInputStream() );
+            in = new ObjectInputStream( socket.getInputStream() );
             out = new ObjectOutputStream(socket.getOutputStream() );
+            out.writeObject(getClientMessage());
+
+            writer = new PrintWriter(socket.getOutputStream(), true);
+            writer.println("client" + color.toUpperCase() + "IsHere");
 
             while (!stop) {
                 TimeUnit.SECONDS.sleep(3);
+                out.writeObject(getClientMessage());
             }
 
         } catch (UnknownHostException | InterruptedException e) {

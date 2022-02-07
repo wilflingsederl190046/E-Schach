@@ -15,9 +15,9 @@
 
 <AnchorPane focusTraversable="true" style="-fx-background-color: #CFCFCF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_echess.ChessboardController">
    <children>
-      <Label layoutX="300.0" layoutY="727.0" prefHeight="29.0" prefWidth="600.0" style="-fx-background-color: #E8E8E8;" />
-      <Label layoutX="276.0" layoutY="125.0" prefHeight="632.0" prefWidth="23.0" style="-fx-background-color: #E8E8E8;" />
-      <GridPane fx:id="gridPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="50.0">
+      <Label layoutX="299.0" layoutY="696.0" prefHeight="29.0" prefWidth="600.0" style="-fx-background-color: #E8E8E8;" />
+      <Label layoutX="276.0" layoutY="94.0" prefHeight="632.0" prefWidth="23.0" style="-fx-background-color: #E8E8E8;" />
+      <GridPane fx:id="gridPane" alignment="CENTER" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="95.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -268,150 +268,150 @@
             </ImageView>
          </children>
       </GridPane>
-      <Label layoutX="283.0" layoutY="668.0" prefHeight="28.0" prefWidth="23.0" text="1">
+      <Label layoutX="283.0" layoutY="637.0" prefHeight="28.0" prefWidth="23.0" text="1">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="593.0" prefHeight="28.0" prefWidth="23.0" text="2">
+      <Label layoutX="283.0" layoutY="562.0" prefHeight="28.0" prefWidth="23.0" text="2">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="521.0" prefHeight="28.0" prefWidth="23.0" text="3">
+      <Label layoutX="283.0" layoutY="490.0" prefHeight="28.0" prefWidth="23.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="448.0" prefHeight="35.0" prefWidth="23.0" text="4">
+      <Label layoutX="283.0" layoutY="417.0" prefHeight="35.0" prefWidth="23.0" text="4">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="373.0" prefHeight="28.0" prefWidth="23.0" text="5">
+      <Label layoutX="283.0" layoutY="342.0" prefHeight="28.0" prefWidth="23.0" text="5">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="297.0" prefHeight="28.0" prefWidth="23.0" text="6">
+      <Label layoutX="283.0" layoutY="266.0" prefHeight="28.0" prefWidth="23.0" text="6">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="223.0" prefHeight="28.0" prefWidth="23.0" text="7">
+      <Label layoutX="283.0" layoutY="192.0" prefHeight="28.0" prefWidth="23.0" text="7">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="147.0" prefHeight="28.0" prefWidth="23.0" text="8">
+      <Label layoutX="283.0" layoutY="116.0" prefHeight="28.0" prefWidth="23.0" text="8">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="300.0" layoutY="724.0" prefHeight="35.0" prefWidth="75.0" text="A">
+      <Label alignment="CENTER" layoutX="300.0" layoutY="693.0" prefHeight="35.0" prefWidth="75.0" text="A">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="372.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="B">
+      <Label alignment="CENTER" layoutX="372.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="B">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="448.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="C">
+      <Label alignment="CENTER" layoutX="448.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="C">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="524.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="D">
+      <Label alignment="CENTER" layoutX="524.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="D">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="600.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="E">
+      <Label alignment="CENTER" layoutX="600.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="E">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="672.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="F">
+      <Label alignment="CENTER" layoutX="672.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="F">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="748.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="G">
+      <Label alignment="CENTER" layoutX="748.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="G">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="824.0" layoutY="724.0" prefHeight="28.0" prefWidth="75.0" text="H">
+      <Label alignment="CENTER" layoutX="824.0" layoutY="693.0" prefHeight="28.0" prefWidth="75.0" text="H">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="160.0" layoutY="29.0" prefHeight="75.0" prefWidth="848.0" style="-fx-background-color: #000000;" text="E-SCHACH" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="161.0" layoutY="14.0" prefHeight="0.0" prefWidth="848.0" style="-fx-background-color: #000000;" text="E-SCHACH" textFill="WHITE">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <ImageView fitHeight="75.0" fitWidth="96.0" layoutX="160.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="75.0" fitWidth="96.0" layoutX="161.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Pictures/White_Queen.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="933.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="934.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Pictures/White_Knight.png" />
          </image>
       </ImageView>
-      <Label layoutX="16.0" layoutY="140.0" text="Username:">
+      <Label layoutX="18.0" layoutY="99.0" text="Username:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="userName" alignment="CENTER" editable="false" layoutX="104.0" layoutY="140.0">
+      <TextField fx:id="userName" alignment="CENTER" editable="false" layoutX="106.0" layoutY="99.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <Label layoutX="37.0" layoutY="184.0" text="Turn:">
+      <Label layoutX="39.0" layoutY="143.0" text="Turn:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="turn" alignment="CENTER" editable="false" layoutX="104.0" layoutY="184.0">
+      <TextField fx:id="turn" alignment="CENTER" editable="false" layoutX="106.0" layoutY="143.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <TextField fx:id="hintField" alignment="CENTER" editable="false" layoutX="198.0" layoutY="774.0" prefHeight="67.0" prefWidth="801.0" style="-fx-text-inner-color: red;">
+      <TextField fx:id="hintField" alignment="CENTER" editable="false" layoutX="199.0" layoutY="728.0" prefHeight="67.0" prefWidth="768.0" style="-fx-text-inner-color: red;">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></TextField>
-      <TextField fx:id="selectChessman" alignment="CENTER" editable="false" layoutX="116.0" layoutY="636.0" prefHeight="25.0" prefWidth="149.0">
+      <TextField fx:id="selectChessman" alignment="CENTER" editable="false" layoutX="115.0" layoutY="595.0" prefHeight="25.0" prefWidth="149.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <TextField fx:id="selectField" alignment="CENTER" editable="false" layoutX="116.0" layoutY="678.0" prefHeight="25.0" prefWidth="149.0">
+      <TextField fx:id="selectField" alignment="CENTER" editable="false" layoutX="115.0" layoutY="637.0" prefHeight="25.0" prefWidth="149.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></TextField>
-      <Button layoutX="206.0" layoutY="729.0" mnemonicParsing="false" onAction="#handleStartAction" prefHeight="25.0" prefWidth="58.0" text="Start">
+      <Button layoutX="205.0" layoutY="688.0" mnemonicParsing="false" onAction="#handleStartAction" prefHeight="25.0" prefWidth="58.0" text="Start">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Label layoutX="4.0" layoutY="636.0" text="Selected man:">
+      <Label layoutX="3.0" layoutY="595.0" text="Selected man:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="4.0" layoutY="678.0" text="Selected field:">
+      <Label layoutX="3.0" layoutY="637.0" text="Selected field:">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="250.0" top="75.0" />
-   </padding>
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
+   <padding>
+      <Insets bottom="120.0" right="270.0" />
+   </padding>
 </AnchorPane>

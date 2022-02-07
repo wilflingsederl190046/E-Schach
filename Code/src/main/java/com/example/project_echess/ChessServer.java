@@ -48,10 +48,10 @@ public class ChessServer {
     private void runServer(){
 
         System.out.println("SERVER: Waiting for client");
+        int counter = 0;
         try{
             ServerSocket serverSocket = new ServerSocket(portNumber);
             stop = false;
-            int counter = 0;
 
             while(!stop){
                 Socket clientSocket = serverSocket.accept();
@@ -62,12 +62,19 @@ public class ChessServer {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                allReader.get(counter).close();
+                allWriter.get(counter).close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     private void startHandle(Socket clientSocket, String user) throws IOException {
-        in = new ObjectInputStream(clientSocket.getInputStream());
-        out = new ObjectOutputStream(clientSocket.getOutputStream());
+        ObjectInputStream in = new ObjectInputStream(clientSocket.getInputStream());
+        ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream());
         allReader.put(user, in);
         allWriter.put(user, out);
         ChessWorker worker = new ChessWorker(allWriter, allReader, this, user);
@@ -91,4 +98,3 @@ public class ChessServer {
         new ChessServer(4445).activate();
     }
 }
-

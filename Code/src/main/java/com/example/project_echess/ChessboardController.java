@@ -391,7 +391,10 @@ public class ChessboardController implements Initializable {
                 captureChessmen(removed, newPositionChessman[0], newPositionChessman[1]);
 
                 moveOnVisualBoard(newPositionChessman[1], newPositionChessman[0]);
-                checkIfPawnIsOnLast();
+
+                if(currentChessmanID.contains("pawn")) {
+                    checkIfPawnIsOnLast();
+                }
 
                 nextTurn();
             }
